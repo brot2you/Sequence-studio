@@ -1,50 +1,1318 @@
-<!doctype html><html lang="fr"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#4169F5"><title>SEQUENCE STUDIO — by BROT2YOU</title><style>
-:root{--blue:#4169f5;--violet:#9265e8;--coral:#ff7868;--gold:#ffc857;--mint:#52cba0;--cream:#faf9f6;--text:#26324b;--muted:#748098;--line:#e9eaf3;--card:#fff;--shadow:0 8px 25px #27345710}*{box-sizing:border-box}body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;background:var(--cream);color:var(--text)}button,input,textarea,select{font:inherit}button{cursor:pointer;border:0}button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:3px solid #90a4ff;outline-offset:2px}.shell{height:100dvh;display:grid;grid-template-columns:246px minmax(0,1fr);overflow:hidden}.sidebar{background:#fff;border-right:1px solid var(--line);padding:26px 16px;display:flex;flex-direction:column;gap:18px}.brand{display:flex;align-items:center;gap:11px;padding:0 10px 20px}.mark{width:44px;height:44px;border-radius:15px;background:var(--blue);color:white;display:grid;place-items:center;font-size:24px;transform:rotate(-7deg);box-shadow:0 6px 0 #c2ccff}.brand strong{font-size:17px;line-height:1.1;display:block}.brand small{color:var(--muted);font-size:11px}.nav{display:grid;gap:6px}.nav button{padding:13px 14px;border-radius:13px;text-align:left;background:transparent;color:#64718a;font-weight:700;display:flex;gap:12px;align-items:center}.nav button.active,.nav button:hover{background:#edf0ff;color:var(--blue)}.sidebar-foot{margin-top:auto;font-size:12px;color:var(--muted);padding:12px}.workspace{min-width:0;overflow-y:auto;position:relative}.topbar{height:80px;background:#ffffffc9;backdrop-filter:blur(12px);border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:0 30px;position:sticky;top:0;z-index:20}.crumb{font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.crumb small{font-size:12px;display:block;color:var(--muted);font-weight:600}.actions{display:flex;gap:8px;align-items:center;flex-wrap:wrap}.btn{border-radius:12px;padding:10px 16px;background:#f2f4fb;color:var(--text);font-weight:750;white-space:nowrap}.btn:hover{filter:brightness(.97)}.btn.primary{background:var(--blue);color:white;box-shadow:0 4px 0 #2b4bcd}.btn.gold{background:var(--gold)}.btn.ghost{background:white;border:1px solid var(--line)}.content{max-width:1500px;margin:auto;padding:32px}.hero{background:linear-gradient(113deg,#4169f5,#9265e8);border-radius:26px;color:white;padding:30px 36px;position:relative;overflow:hidden;margin-bottom:24px}.hero:after{content:'✦ ✧ ✦';position:absolute;right:32px;top:8px;font-size:80px;color:#ffffff24;transform:rotate(-12deg)}.hero h1{font-size:clamp(26px,3vw,39px);margin:0 0 8px;letter-spacing:-1.2px}.hero p{margin:0;opacity:.88}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:30px 0 17px}.section-heading h2{font-size:21px;letter-spacing:-.5px;margin:0}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}.seq-card{border-radius:22px;background:white;padding:20px;box-shadow:var(--shadow);border:1px solid var(--line);cursor:pointer;transition:transform .2s}.seq-card:hover{transform:translateY(-4px)}.seq-card h3{font-size:22px;margin:12px 0 7px}.seq-card p{color:#657088;line-height:1.5;font-size:14px;min-height:43px}.pill{display:inline-flex;align-items:center;gap:5px;border-radius:99px;background:#edf0ff;color:var(--blue);font-weight:800;font-size:12px;padding:6px 10px}.card-row{display:flex;align-items:center;justify-content:space-between;gap:8px}.muted{color:var(--muted)}.panel{background:var(--card);border-radius:22px;box-shadow:var(--shadow);border:1px solid var(--line);padding:24px;margin-bottom:20px}.two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}.field{display:flex;flex-direction:column;gap:7px;margin-bottom:15px}.field label{font-weight:800;font-size:12px;color:#68748b;text-transform:uppercase;letter-spacing:.5px}input,textarea,select{padding:11px 12px;border:1px solid #dde2f0;border-radius:12px;background:white;color:var(--text);width:100%;min-width:0}textarea{resize:vertical;min-height:68px}.chips{display:flex;gap:8px;flex-wrap:wrap}.chip{background:#f1f3fb;padding:7px 11px;border-radius:9px;font-size:13px;font-weight:700}.entry{display:flex;gap:10px;align-items:flex-start;padding:12px;background:#f7f8fc;border-radius:15px;margin:9px 0}.entry>div{flex:1;min-width:0}.entry h4{margin:1px 0 5px}.entry p{font-size:13px;margin:0;color:var(--muted)}.icon-btn{padding:8px 11px;border-radius:10px;background:#fff;color:#8c96ad;border:1px solid #e4e7f0}.icon-btn:hover{color:#e34b5b}.hline{height:1px;background:var(--line);margin:20px 0}.tabs{display:flex;gap:8px;overflow-x:auto;margin-bottom:20px;padding:3px}.tabs button{white-space:nowrap;background:white;border:1px solid var(--line);padding:10px 18px;border-radius:12px;font-weight:800;color:#75819b}.tabs button.active{background:var(--blue);color:white}.canvas{min-height:530px;position:relative;border-radius:24px;background-color:white;background-image:radial-gradient(#dbe0f2 1px,transparent 1px);background-size:22px 22px;border:1px solid var(--line);overflow:auto;padding:30px}.mindmap svg{width:100%;min-width:840px;min-height:590px;display:block}.node-wrap{cursor:pointer}.node-wrap:hover rect{stroke:#26324b;stroke-width:2}.stair-scroller{overflow:auto;padding:15px 4px 26px}.stairs{display:flex;align-items:flex-end;gap:9px;min-width:max-content;height:410px;padding:0 12px 15px}.step{width:185px;padding:15px 14px;border:2px solid #ffffff;border-bottom:6px solid #00000013;border-radius:18px 18px 7px 7px;display:flex;flex-direction:column;gap:8px;text-align:left;box-shadow:var(--shadow);position:relative;color:#26324b}.step::before{content:attr(data-number);font-weight:900;font-size:12px;opacity:.6}.step h4{font-size:16px;margin:0}.step p{font-size:12px;line-height:1.4;margin:0;opacity:.78}.step span{margin-top:auto;font-size:11px;font-weight:850;text-transform:uppercase}.step:hover{outline:3px solid #8da2ff}.step:nth-child(5n+1){background:#d9edff}.step:nth-child(5n+2){background:#eaddff}.step:nth-child(5n+3){background:#d5faea}.step:nth-child(5n+4){background:#ffe3de}.step:nth-child(5n){background:#fff0c7}.final-step{background:#ffd571!important;width:225px}.stats{display:flex;gap:12px;flex-wrap:wrap}.stat{background:white;border-radius:16px;border:1px solid var(--line);padding:13px 18px;font-weight:850}.stat b{color:var(--blue);font-size:20px}.objective{border-left:5px solid var(--violet)}.matrix-scroll{overflow-x:auto}.matrix{border-collapse:separate;border-spacing:4px;min-width:730px;width:100%}.matrix th{font-size:12px;text-align:center;padding:10px;background:#f3f5fd;border-radius:8px}.matrix th:first-child{text-align:left}.matrix td{background:#f9faff;border-radius:8px;padding:8px;text-align:center;font-size:12px}.matrix td:first-child{text-align:left;font-weight:750}.matrix select{font-size:11px;padding:6px;min-width:100px}.note{padding:14px;border-radius:12px;background:#fff3d7;color:#6b5218;margin-bottom:17px;font-size:13px}.timeline{display:flex;gap:8px;overflow:auto;padding:30px 10px}.timeline .t-node{min-width:190px;background:white;border:2px solid #d8ddf6;border-radius:18px;padding:20px}.timeline .arrow{align-self:center;font-size:24px;color:var(--blue)}.preview{max-width:930px;margin:auto;background:white;box-shadow:var(--shadow);padding:35px;border-radius:20px}.preview h1{font-size:32px}.preview .final{background:#fff1bf;padding:22px;border-radius:17px;border-left:7px solid #ffc857}.colorbar{height:7px;background:linear-gradient(90deg,#4169f5,#9265e8,#ff7868,#ffc857);border-radius:99px;margin-bottom:20px}.mini-stairs{display:flex;align-items:flex-end;gap:5px;overflow:auto;height:160px}.mini-stairs div{min-width:110px;background:#e5e8ff;border-radius:9px 9px 0 0;padding:10px;font-size:11px;font-weight:800}.mini-stairs div:last-child{background:#ffdb82}.toast{position:fixed;bottom:23px;right:24px;background:#26324b;color:white;border-radius:12px;padding:13px 18px;box-shadow:var(--shadow);z-index:60}.hidden{display:none!important}.mobile-menu{display:none}.footer-note{font-size:12px;color:var(--muted);margin-top:25px}.badge{border-radius:8px;background:#eff1fc;padding:6px 9px;font-size:12px;font-weight:800}.backward{display:grid;grid-template-columns:1fr 1.2fr;gap:18px}.backward-goal{border-radius:22px;background:#fff0c6;padding:25px;border:2px solid var(--gold)}.backward-box{border-radius:18px;border:1px solid var(--line);background:#fff;padding:19px}.head-with-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.search{max-width:350px}.category-badge{font-size:11px;padding:5px 9px;border-radius:8px;font-weight:850;background:#e6e5ff;color:#6856ac}.empty{padding:60px 20px;text-align:center;color:var(--muted)}.help{font-size:13px;color:var(--muted);line-height:1.6}.inline-add{display:flex;gap:8px}.inline-add input{flex:1}.seq-list{display:flex;flex-direction:column;gap:10px}.row-title{font-size:18px;font-weight:850}.category-line{border-left:5px solid #9265e8}.danger{color:#d34754}.compact{font-size:13px}.svg-export{background:#fff}
-@media(max-width:950px){.shell{grid-template-columns:76px minmax(0,1fr)}.sidebar{padding:20px 9px}.brand{padding:0 4px}.brand strong,.brand small,.nav .label,.sidebar-foot{display:none}.nav button{justify-content:center;padding:13px}.content{padding:21px}.topbar{padding:0 18px}.two-col,.backward{grid-template-columns:1fr}}@media(max-width:600px){.shell{grid-template-columns:1fr;grid-template-rows:60px minmax(0,1fr)}.sidebar{padding:8px 12px;flex-direction:row;overflow-x:auto;align-items:center}.brand{padding:0;flex:none}.brand .mark{width:35px;height:35px}.nav{display:flex}.nav button{flex:none;padding:8px}.workspace{grid-row:2}.topbar{height:auto;min-height:67px;padding:10px 13px;gap:7px}.topbar .crumb{max-width:120px;font-size:12px}.actions .hide-small{display:none}.actions .btn{padding:9px 10px;font-size:12px}.content{padding:14px}.panel{padding:17px}.hero{padding:24px}.stairs{height:380px}.step{width:155px}.preview{padding:20px}.grid{grid-template-columns:1fr}}@media print{.sidebar,.topbar,.tabs,.no-print,.toast{display:none!important}.shell{display:block;height:auto}.workspace{overflow:visible}.content{max-width:none;padding:0}.preview{box-shadow:none}.panel{box-shadow:none;break-inside:avoid}.canvas{overflow:visible}.print-only{display:block!important}body{background:white}@page{size:A4 landscape;margin:12mm}}
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#1b1f3b">
+<title>SEQUENCE STUDIO — by BROT2YOU</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#1b1f3b;--paper:#f4f0ff;--blue:#3d5afe;--pink:#ff4fa3;--yellow:#ffd23f;--mint:#2ee6a8;--orange:#ff8a3d;--violet:#8b5cf6;--cyan:#22b8f0;--lime:#b8f15a;--text:#1b1f3b;--muted:#585e7d;--card:#fff;--display:'Bricolage Grotesque','Inter',ui-sans-serif,system-ui,sans-serif}
+*{box-sizing:border-box}
+body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,'Segoe UI',sans-serif;background-color:var(--paper);background-image:radial-gradient(#d6cdfb 1.3px,transparent 1.4px);background-size:22px 22px;color:var(--text);-webkit-text-size-adjust:100%}
+h1,h2,h3,.brand strong{font-family:var(--display)}
+button,input,textarea,select{font:inherit}
+button{cursor:pointer;border:0;color:inherit}
+button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible,[tabindex]:focus-visible{outline:3px solid var(--pink);outline-offset:3px}
+button[disabled]{opacity:.35;cursor:default}
+.shell{height:100vh;height:100dvh;display:grid;grid-template-columns:250px minmax(0,1fr);overflow:hidden}
+.sidebar{background:#fff;border-right:3px solid var(--ink);padding:24px 14px;display:flex;flex-direction:column;gap:16px}
+.brand{display:flex;align-items:center;gap:12px;padding:0 8px 16px}
+.mark{width:46px;height:46px;border-radius:14px;background:var(--pink);color:#fff;display:grid;place-items:center;font-size:24px;transform:rotate(-8deg);border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);flex:none}
+.brand strong{font-size:20px;line-height:.95;display:block;letter-spacing:-.5px;font-weight:800}
+.brand small{color:var(--muted);font-size:11px;font-weight:700}
+.nav{display:grid;gap:6px}
+.nav button{padding:8px 10px;border-radius:14px;text-align:left;background:transparent;color:var(--ink);font-weight:800;display:flex;gap:11px;align-items:center;border:2.5px solid transparent;font-size:14.5px}
+.nav .ico{width:32px;height:32px;border-radius:10px;background:var(--c);color:var(--t);display:grid;place-items:center;border:2px solid var(--ink);flex:none;font-size:15px}
+.nav button:not(.active):not([disabled]):hover{background:#f3efff}
+.nav button.active{background:var(--c);color:var(--t);border-color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.nav button.active .ico{background:#fff;color:var(--ink)}
+.sidebar-foot{margin-top:auto;font-size:12px;font-weight:700;padding:12px 14px;line-height:1.45;background:var(--yellow);border:2.5px solid var(--ink);border-radius:14px;transform:rotate(-2deg);box-shadow:3px 3px 0 var(--ink)}
+.workspace{min-width:0;overflow-y:auto;position:relative;-webkit-overflow-scrolling:touch}
+.topbar{min-height:74px;background:#fff;border-bottom:3px solid var(--ink);display:flex;align-items:center;justify-content:space-between;gap:14px;padding:10px 30px;position:sticky;top:0;z-index:20}
+.crumb{font-weight:800;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;min-width:0;font-family:var(--display);font-size:18px}
+.crumb small{font-size:12px;display:block;color:var(--muted);font-weight:700;overflow:hidden;text-overflow:ellipsis;font-family:Inter,system-ui,sans-serif}
+.actions{display:flex;gap:9px;align-items:center;flex-wrap:wrap}
+.btn{border-radius:12px;padding:9px 15px;background:#fff;color:var(--ink);font-weight:800;white-space:nowrap;border:2.5px solid var(--ink);box-shadow:3px 3px 0 var(--ink);transition:transform .08s,box-shadow .08s}
+.btn:hover:not([disabled]){transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.btn:active:not([disabled]){transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+.btn.primary{background:var(--blue);color:#fff}
+.btn.ghost{background:#fff}
+.btn.danger{background:#ffd1dc;color:#9d0f33}
+.btn.sq{padding:9px 11px;min-width:42px}
+.btn.small{padding:6px 11px;font-size:13px;border-radius:10px}
+.content{max-width:1500px;margin:auto;padding:30px 32px 40px}
+.hero{background:var(--hc);color:var(--ht);border:3px solid var(--ink);border-radius:26px;box-shadow:6px 6px 0 var(--ink);padding:32px 170px 32px 36px;position:relative;overflow:hidden;margin-bottom:26px}
+.hero::before{content:'';position:absolute;right:-60px;top:-80px;width:380px;height:380px;border-radius:50%;background-image:radial-gradient(var(--dot) 3px,transparent 3.2px);background-size:15px 15px;pointer-events:none}
+.hero.slim{padding-top:22px;padding-bottom:22px;margin-bottom:22px}
+.hero h1{font-size:clamp(32px,4.4vw,58px);margin:0 0 8px;letter-spacing:-2px;line-height:.95;font-weight:800;position:relative}
+.hero.slim h1{font-size:clamp(28px,3.4vw,42px);letter-spacing:-1.4px}
+.hero p{margin:0;max-width:60ch;font-weight:600;font-size:15.5px;line-height:1.45;position:relative}
+.sticker{position:absolute;right:38px;top:50%;width:92px;height:92px;margin-top:-46px;display:grid;place-items:center;font-size:40px;background:var(--sk);color:var(--ink);border:3px solid var(--ink);border-radius:26px;box-shadow:4px 4px 0 var(--ink);transform:rotate(9deg);animation:stick .45s cubic-bezier(.3,1.6,.5,1) both}
+.hero.slim .sticker{width:74px;height:74px;margin-top:-37px;font-size:32px;border-radius:22px}
+@keyframes stick{from{transform:rotate(-25deg) scale(.4);opacity:0}to{transform:rotate(9deg) scale(1);opacity:1}}
+.section-heading{display:flex;justify-content:space-between;align-items:center;gap:14px;margin:4px 0 16px}
+.section-heading h2{font-size:23px;letter-spacing:-.6px;margin:0}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:22px}
+.seq-card{border-radius:22px;background:#fff;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);cursor:pointer;transition:transform .15s,box-shadow .15s;display:flex;flex-direction:column;overflow:hidden}
+.seq-card:hover{transform:translate(-2px,-3px) rotate(-.5deg);box-shadow:8px 8px 0 var(--ink)}
+.seq-card .band{background-color:var(--cc);background-image:radial-gradient(rgba(255,255,255,.35) 2px,transparent 2.2px);background-size:12px 12px;border-bottom:3px solid var(--ink);padding:14px 14px 30px 16px;display:flex;justify-content:space-between;align-items:flex-start}
+.seq-card .band .pill{background:#fff;transform:rotate(-4deg)}
+.seq-card .body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
+.seq-card h3{font-size:25px;margin:0 0 10px;letter-spacing:-.7px;line-height:1.05}
+.seq-card p{color:var(--muted);line-height:1.5;font-size:14px;min-height:42px;margin:12px 0}
+.seq-card .card-actions{margin-top:auto;display:flex;gap:7px;align-items:center}
+.seq-card .card-actions .btn{margin-right:auto}
+.pc0{--cc:var(--blue)}.pc1{--cc:var(--pink)}.pc2{--cc:var(--yellow)}.pc3{--cc:var(--mint)}.pc4{--cc:var(--orange)}.pc5{--cc:var(--violet)}
+.pill{display:inline-flex;align-items:center;gap:5px;border-radius:99px;background:var(--yellow);color:var(--ink);font-weight:850;font-size:12px;padding:5px 11px;border:2px solid var(--ink)}
+.card-row{display:flex;align-items:center;justify-content:space-between;gap:8px}
+.muted{color:var(--muted)}
+.panel{background:#fff;border-radius:22px;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink);padding:24px;margin-bottom:24px;min-width:0}
+.panel h2{font-size:22px;letter-spacing:-.5px;margin:0 0 10px}
+.two-col{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:24px}
+.two-col.tight{gap:12px}
+.field{display:flex;flex-direction:column;gap:7px;margin-bottom:15px}
+.field label,.flabel{font-weight:850;font-size:13px;color:var(--ink)}
+input,textarea,select{padding:11px 12px;border:2.5px solid var(--ink);border-radius:12px;background:#fff;color:var(--ink);width:100%;min-width:0;font-size:16px;transition:box-shadow .1s}
+input:focus,textarea:focus,select:focus{box-shadow:3px 3px 0 var(--blue);outline:none}
+textarea{resize:vertical;min-height:72px;line-height:1.45}
+.entry{display:flex;gap:8px;align-items:flex-start;padding:12px;background:#fff;border:2px solid var(--ink);border-radius:15px;margin:10px 0}
+.entry>div{flex:1;min-width:0}
+.entry h4{margin:1px 0 5px;font-size:15.5px}
+.entry p{font-size:13px;margin:0 0 6px;color:var(--muted);line-height:1.45}
+.icon-btn{padding:7px 10px;border-radius:10px;background:#fff;color:var(--ink);border:2px solid var(--ink);line-height:1;min-width:36px;box-shadow:2px 2px 0 var(--ink);font-weight:800}
+.icon-btn:hover:not([disabled]){background:var(--yellow)}
+.icon-btn:active:not([disabled]){transform:translate(2px,2px);box-shadow:none}
+.icon-btn.del:hover{background:#ffd1dc}
+.hline{height:3px;background:var(--ink);margin:16px 0;border-radius:3px}
+.tabs{display:flex;gap:10px;overflow-x:auto;margin-bottom:22px;padding:3px 6px 8px 3px}
+.tabs button{white-space:nowrap;background:#fff;border:2.5px solid var(--ink);padding:9px 18px;border-radius:12px;font-weight:850;color:var(--ink);box-shadow:3px 3px 0 var(--ink)}
+.tabs button.active{background:var(--orange);color:var(--ink);transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+.canvas{position:relative;border-radius:20px;background-color:#f8f6ff;border:3px solid var(--ink);overflow:auto;padding:16px;-webkit-overflow-scrolling:touch}
+.mindmap svg{width:100%;height:auto;min-width:860px;display:block}
+.node-wrap{cursor:pointer}
+.node-wrap:hover rect.box,.node-wrap:focus rect.box{fill:#fff8d6}
+.stair-scroller{overflow:auto;padding:15px 8px 22px;-webkit-overflow-scrolling:touch}
+.stairs{display:flex;align-items:flex-end;gap:12px;min-width:-webkit-max-content;min-width:max-content;height:430px;padding:0 22px 10px 12px}
+.step{width:190px;padding:15px 14px;border:3px solid var(--ink);border-radius:18px 18px 8px 8px;display:flex;flex-direction:column;gap:7px;text-align:left;box-shadow:4px 4px 0 var(--ink);position:relative;color:var(--ink);overflow:hidden;transition:transform .12s}
+.step .num{font-weight:900;font-size:11px;letter-spacing:.5px;background:#fff;border:2px solid var(--ink);border-radius:99px;padding:2px 8px;align-self:flex-start}
+.step h4{font-size:17px;margin:0;font-family:var(--display);line-height:1.1;letter-spacing:-.3px}
+.step p{font-size:12px;line-height:1.4;margin:0}
+.step .foot{margin-top:auto;font-size:11px;font-weight:850}
+.step:hover{transform:translateY(-5px)}
+.c0{background:#9ec5ff}.c1{background:#ffb3d9}.c2{background:#9ff0cf}.c3{background:#ffc59e}.c4{background:#d4c2ff}
+.step.final{background:var(--yellow);width:230px;background-image:radial-gradient(rgba(255,255,255,.55) 2.5px,transparent 2.7px);background-size:14px 14px}
+.stats{display:flex;gap:14px;flex-wrap:wrap}
+.stat{background:#fff;border-radius:16px;border:3px solid var(--ink);box-shadow:3px 3px 0 var(--ink);padding:11px 18px;font-weight:800;font-size:14px}
+.stat:nth-child(1){background:#d9e2ff}.stat:nth-child(2){background:#ffd9ec}.stat:nth-child(3){background:#d6faec}.stat:nth-child(4){background:#fff3c4}
+.stat b{font-size:24px;font-family:var(--display);margin-right:3px}
+.matrix-scroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
+.matrix{border-collapse:separate;border-spacing:5px;min-width:720px;width:100%}
+.matrix th{font-size:12px;text-align:center;padding:10px 8px;background:var(--ink);color:#fff;border-radius:9px;font-weight:800}
+.matrix th:first-child{text-align:left;min-width:220px}
+.matrix td{background:#f6f3ff;border-radius:9px;padding:5px;text-align:center;font-size:12px}
+.matrix td.obj{text-align:left;font-weight:700;padding:8px 10px;line-height:1.45;background:#fff;border:2px solid var(--ink)}
+.cell{width:100%;min-width:46px;height:40px;border-radius:10px;background:#fff;border:2px dashed #b4add6;font-weight:900;color:#a29bc7;font-size:15px;transition:transform .08s}
+.cell:active{transform:scale(.92)}
+.cell.s-I,.mcell.s-I{background:#9ec5ff;color:var(--ink);border:2px solid var(--ink)}
+.cell.s-P,.mcell.s-P{background:#d4c2ff;color:var(--ink);border:2px solid var(--ink)}
+.cell.s-R,.mcell.s-R{background:#9ff0cf;color:var(--ink);border:2px solid var(--ink)}
+.cell.s-E,.mcell.s-E{background:var(--yellow);color:var(--ink);border:2px solid var(--ink)}
+.cell.s-I,.cell.s-P,.cell.s-R,.cell.s-E{box-shadow:2px 2px 0 var(--ink)}
+.mcell{display:inline-block;min-width:26px;padding:3px 6px;border-radius:7px;font-weight:900}
+.diag{display:inline-block;font-size:11px;font-weight:850;padding:5px 8px;border-radius:8px;white-space:nowrap;border:2px solid var(--ink)}
+.diag.ok{background:var(--mint)}.diag.warn{background:var(--yellow)}.diag.bad{background:#ff8fa8}.diag.info{background:#fff}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12.5px;margin:12px 0 6px;align-items:center;font-weight:700}
+.legend .mcell{margin-right:5px}
+.note{padding:13px 15px;border-radius:14px;background:#fff3c4;border:2px solid var(--ink);margin-bottom:17px;font-size:13px;line-height:1.5;font-weight:600}
+.alerts{margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px}
+.alerts li{padding:10px 13px;border-radius:12px;background:#fff3c4;border:2px solid var(--ink);font-size:13px;line-height:1.45;font-weight:650}
+.alerts li{padding-left:38px;background-repeat:no-repeat;background-position:11px 9px;background-size:18px 18px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' stroke='%231b1f3b' stroke-width='2.2' stroke-linejoin='round'%3E%3Cpath d='M13 2.5L5 13.5h6l-1 8 8-11h-6z' fill='%23ff8a3d'/%3E%3C/svg%3E")}
+.alerts li.good{background:#c9f7e5}
+.alerts li.good{background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b1f3b' stroke-width='2.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M5 12.5l4.5 4.5L19 7.5'/%3E%3C/svg%3E")}
+.timeline{display:flex;gap:8px;overflow:auto;padding:24px 10px;align-items:stretch}
+.timeline .t-node{min-width:200px;max-width:240px;background:#fff;border:3px solid var(--ink);border-radius:18px;padding:18px;text-align:left;box-shadow:4px 4px 0 var(--ink)}
+.timeline .t-node.start{background:#9ec5ff}
+.timeline .t-node.fin{background:var(--yellow)}
+.timeline .t-node h3{margin:6px 0;font-size:18px;letter-spacing:-.3px}
+.timeline .arrow{align-self:center;font-size:28px;font-weight:900;color:var(--ink)}
+.preview{max-width:980px;margin:auto;background:#fff;border:3px solid var(--ink);box-shadow:6px 6px 0 var(--ink);padding:36px;border-radius:22px}
+.preview h1{font-size:40px;margin:14px 0 6px;letter-spacing:-1.4px;line-height:1}
+.preview h2{font-size:22px;margin:30px 0 12px;letter-spacing:-.4px}
+.preview .final{background:var(--yellow);padding:20px 22px;border-radius:17px;border:3px solid var(--ink)}
+.preview .final h3{margin:0 0 8px}
+.colorbar{height:14px;background:repeating-linear-gradient(90deg,var(--blue) 0 60px,var(--pink) 60px 120px,var(--yellow) 120px 180px,var(--mint) 180px 240px,var(--orange) 240px 300px);border-radius:99px;margin-bottom:20px;border:2.5px solid var(--ink)}
+.obj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:12px}
+.obj-grid ul{margin:8px 0 0;padding-left:18px;line-height:1.55;font-size:14px}
+.step-table{width:100%;border-collapse:separate;border-spacing:0;font-size:13px;min-width:640px;border:2.5px solid var(--ink);border-radius:14px;overflow:hidden}
+.step-table th{text-align:left;background:var(--ink);color:#fff;padding:10px;font-size:12px}
+.step-table td{border-top:2px solid var(--ink);padding:9px 10px;vertical-align:top;line-height:1.45}
+.step-table tr.final td{background:#fff3c4}
+.step-table a{color:var(--blue);word-break:break-all;font-weight:700}
+.toast{position:fixed;bottom:23px;right:24px;background:var(--yellow);color:var(--ink);border:3px solid var(--ink);border-radius:14px;padding:12px 18px;box-shadow:4px 4px 0 var(--ink);z-index:90;max-width:calc(100vw - 48px);font-weight:800;animation:stick2 .25s ease-out}
+@keyframes stick2{from{transform:translateY(12px) rotate(-3deg);opacity:0}to{transform:none;opacity:1}}
+.hidden{display:none!important}
+.footer-note{font-size:12.5px;color:var(--muted);margin-top:26px;font-weight:600}
+.backward{display:grid;grid-template-columns:1fr 1.2fr;gap:22px}
+.backward-goal{border-radius:22px;background:var(--yellow);padding:25px;border:3px solid var(--ink);box-shadow:5px 5px 0 var(--ink)}
+.backward-box{border-radius:20px;border:3px solid var(--ink);background:#fff;padding:20px;box-shadow:5px 5px 0 var(--ink)}
+.backward h2{font-size:22px;margin:12px 0;letter-spacing:-.4px}
+.head-with-controls{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.search{max-width:330px;box-shadow:3px 3px 0 var(--ink)}
+.category-badge{display:inline-block;font-size:11px;padding:3px 9px;border-radius:8px;font-weight:850;background:#fff;color:var(--ink);border:2px solid var(--ink)}
+.cat0{background:#ffc59e}.cat1{background:#9fe2ff}.cat2{background:#d4c2ff}.cat3{background:#ffb3d9}.cat4{background:#9ff0cf}.cat5{background:#fff09a}
+.empty{padding:50px 20px;text-align:center;color:var(--muted);grid-column:1/-1;font-weight:700;border:3px dashed #b4add6;border-radius:22px;background:#fff}
+.help{font-size:13px;color:var(--muted);line-height:1.6;margin:0 0 10px;font-weight:550}
+.seq-list{display:flex;flex-direction:column}
+.seg{display:inline-flex;background:#fff;border:2.5px solid var(--ink);border-radius:14px;padding:4px;gap:4px;box-shadow:3px 3px 0 var(--ink)}
+.seg button{padding:7px 14px;border-radius:9px;background:transparent;font-weight:850;color:var(--ink)}
+.seg button.active{background:var(--blue);color:#fff}
+.star{background:#fff;width:38px;height:38px;border-radius:50%;color:var(--ink);border:2.5px solid var(--ink);box-shadow:2px 2px 0 var(--ink);transform:rotate(8deg)}
+.acts{display:flex;flex-wrap:wrap;gap:4px}
+.act{display:inline-block;font-size:10.5px;font-weight:900;padding:2px 6px;border-radius:6px;color:var(--ink);border:1.5px solid var(--ink);background:#fff}
+.act-CO{background:#9fe2ff}.act-CE{background:#d4c2ff}.act-EOC{background:#ffc59e}.act-EOI{background:#ffb3d9}.act-EE{background:#9ff0cf}.act-MED{background:#fff09a}
+.act-pick{display:flex;flex-wrap:wrap;gap:8px}
+.act-toggle{padding:7px 12px;border-radius:10px;background:#fff;color:var(--ink);font-weight:850;font-size:13px;border:2.5px solid var(--ink);box-shadow:2px 2px 0 var(--ink)}
+.act-toggle[aria-pressed="true"]{background:var(--pink);color:#fff;transform:translate(2px,2px);box-shadow:none}
+.cov{display:grid;gap:10px}
+.cov-row{display:grid;grid-template-columns:minmax(120px,200px) 1fr 120px;gap:12px;align-items:center;font-size:13px;font-weight:650}
+.cov-bar{height:18px;background:#fff;border:2px solid var(--ink);border-radius:99px;overflow:hidden}
+.cov-bar i{display:block;height:100%;border-right:2px solid var(--ink)}
+.cov-bar i[style*="width:0%"]{border:0}
+.cov-row .n{font-weight:850;text-align:right}
+.check{display:flex;gap:10px;align-items:center;font-weight:750;font-size:14px;margin:4px 0 16px}
+.check input{width:22px;height:22px;flex:none;accent-color:var(--pink)}
+.err{color:#9d0f33;font-size:13px;font-weight:800;margin:0}
+.tag{display:inline-block;font-size:11px;font-weight:850;padding:2px 7px;border-radius:6px;background:var(--orange);border:1.5px solid var(--ink)}
+.modal{position:fixed;top:0;left:0;right:0;bottom:0;background-color:rgba(27,31,59,.55);background-image:radial-gradient(rgba(255,255,255,.12) 1.5px,transparent 1.6px);background-size:16px 16px;display:flex;align-items:center;justify-content:center;padding:16px;z-index:80}
+.modal-card{background:#fff;border-radius:22px;width:100%;max-width:640px;max-height:calc(100vh - 32px);max-height:calc(100dvh - 32px);overflow:auto;border:3px solid var(--ink);box-shadow:8px 8px 0 var(--ink);animation:pop .22s cubic-bezier(.3,1.5,.5,1);-webkit-overflow-scrolling:touch}
+@keyframes pop{from{transform:translateY(14px) scale(.96);opacity:0}to{transform:none;opacity:1}}
+.modal-head{padding:18px 22px 12px;display:flex;justify-content:space-between;align-items:center;gap:10px;background:var(--yellow);border-bottom:3px solid var(--ink)}
+.modal-head h2{margin:0;font-size:24px;letter-spacing:-.6px}
+.modal-body{padding:16px 22px 4px}
+.modal-foot{padding:12px 22px 22px;display:flex;gap:9px;justify-content:flex-end;flex-wrap:wrap;position:sticky;bottom:0;background:#fff}
+.modal-foot .spacer{flex:1}
+.print-only{display:none}
+.i{width:1.2em;height:1.2em;vertical-align:-.24em;flex:none;fill:none;stroke:currentColor;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round;overflow:visible}
+.i .f{fill:var(--if,transparent)}
+.btn,.icon-btn,.tabs button,.seg button{display:inline-flex;align-items:center;justify-content:center;gap:7px}
+.btn .i{width:18px;height:18px}
+.btn.ghost,.icon-btn,.tabs button{--if:var(--yellow)}
+.btn.primary{--if:rgba(255,255,255,.35)}
+.btn.danger{--if:#ff8fa8}
+.icon-btn{padding:6px;min-width:36px;min-height:34px}
+.icon-btn .i{width:19px;height:19px}
+.icon-btn:hover:not([disabled]){--if:#fff}
+.icon-btn.del{--if:#ff8fa8}
+.tabs button .i{width:20px;height:20px}
+.tabs button.active{--if:#fff}
+.nav .ico .i{width:19px;height:19px;stroke-width:2.3;--if:rgba(255,255,255,.55)}
+.nav button.active .ico .i{--if:var(--c)}
+.mark .i{width:28px;height:28px;stroke:var(--ink);stroke-width:2.2;--if:var(--yellow)}
+.sticker .i{width:50px;height:50px;stroke-width:2;--if:var(--hc)}
+.hero.slim .sticker .i{width:40px;height:40px}
+h2 .i,.modal-head .i{width:1.05em;height:1.05em;vertical-align:-.15em;--if:var(--yellow)}
+.modal-head .i{--if:#fff}
+.modal-head .icon-btn .i{--if:transparent}
+.panel h2 .i{--if:var(--yellow)}
+.pill .i{width:14px;height:14px;--if:#fff}
+.step .num .i{width:13px;height:13px;margin-right:2px;--if:var(--yellow)}
+.step .foot .i{width:14px;height:14px;--if:var(--yellow)}
+.t-node b .i{width:18px;height:18px;--if:#fff}
+.timeline .arrow .i{width:30px;height:30px}
+.star{display:grid;place-items:center;padding:0;-webkit-text-stroke:0}
+.star .i{width:21px;height:21px;--if:#fff;stroke-width:2.2}
+.star[aria-pressed="true"] .i{--if:var(--yellow)}
+.seq-card .meta{display:inline-flex;align-items:center;gap:5px}
+.seq-card .meta .i{width:15px;height:15px;--if:#d4c2ff}
+.seq-card .meta .i:nth-of-type(2){margin-left:8px;--if:#9fe2ff}
+.entry .i{width:15px;height:15px;--if:var(--yellow)}
+.entry .icon-btn .i{width:18px;height:18px}
+.cov-row .n .i,.help .i{width:15px;height:15px;--if:var(--yellow)}
+.footer-note .i{width:15px;height:15px;margin-right:5px;--if:var(--yellow)}
+.step-table .i{width:18px;height:18px;--if:var(--yellow)}
+.search{padding-left:42px;background:#fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%231b1f3b' stroke-width='2.4' stroke-linecap='round'%3E%3Ccircle cx='10.5' cy='10.5' r='6.5' fill='%23ffd23f'/%3E%3Cpath d='M15.5 15.5l5 5'/%3E%3C/svg%3E") no-repeat 13px 50%;background-size:20px 20px}
+.sidebar-foot .i{width:15px;height:15px;--if:#fff}
+@media(max-width:950px){.shell{grid-template-columns:78px minmax(0,1fr)}.sidebar{padding:20px 9px}.brand{padding:0 4px}.brand strong,.brand small,.nav .label,.sidebar-foot{display:none}.nav button{justify-content:center;padding:6px}.content{padding:22px}.topbar{padding:10px 18px}.two-col,.backward{grid-template-columns:1fr}}
+@media(max-width:600px){.shell{grid-template-columns:1fr;grid-template-rows:auto minmax(0,1fr)}.sidebar{padding:8px 10px;flex-direction:row;overflow-x:auto;align-items:center;gap:8px;border-right:0;border-bottom:3px solid var(--ink)}.brand{padding:0;flex:none}.brand .mark{width:36px;height:36px;font-size:18px}.nav{display:flex;gap:4px}.nav button{flex:none;padding:4px}.workspace{grid-row:2}.topbar{padding:9px 12px;gap:7px}.topbar .crumb{font-size:15px;flex:1}.actions{flex-wrap:nowrap}.actions .hide-small{display:none}.actions .btn{padding:8px 10px;font-size:13px}.content{padding:16px 16px 30px}.panel{padding:18px}.hero{padding:22px 22px 24px;box-shadow:4px 4px 0 var(--ink)}.hero.slim{padding:18px 20px}.sticker{display:none}.stairs{height:400px}.step{width:162px}.preview{padding:20px}.grid{grid-template-columns:1fr}.cov-row{grid-template-columns:92px 1fr 84px;gap:8px}.modal{padding:0;align-items:flex-end}.modal-card{border-radius:22px 22px 0 0;max-height:94vh;box-shadow:none;border-bottom:0}}
+@media print{.sidebar,.topbar,.tabs,.no-print,.toast,.modal{display:none!important}.shell{display:block;height:auto}.workspace{overflow:visible}.content{max-width:none;padding:0}.preview{box-shadow:none;padding:0;max-width:none;border:0}.panel{box-shadow:none;break-inside:avoid}.canvas{overflow:visible}.print-only{display:block!important}body{background:#fff}.step-table,.matrix{min-width:0}.step-table tr,.matrix tr{break-inside:avoid}*{-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{size:A4 landscape;margin:12mm}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important}}
-</style></head><body><div class="shell"><aside class="sidebar"><div class="brand"><div class="mark">✦</div><div><strong>SEQUENCE<br>STUDIO</strong><small>by BROT2YOU</small></div></div><nav class="nav" id="navigation"></nav><div class="sidebar-foot">✦ Creative Pop Edition<br>Vos séquences, votre créativité.</div></aside><main class="workspace"><header class="topbar"><div class="crumb" id="breadcrumb">My Sequences<small>Creative teaching starts here</small></div><div class="actions"><span class="pill hide-small" id="saveState">● Enregistré</span><button class="btn ghost hide-small" id="importBtn">↥ Import JSON</button><button class="btn ghost" id="exportBtn">↧ Export</button><button class="btn primary" id="newBtn">＋ Séquence</button></div></header><section class="content" id="screen"></section></main></div><input class="hidden" type="file" accept=".json,application/json" id="importFile"><div id="toast" class="toast hidden" role="status"></div><script>
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="mark" aria-hidden="true"><i data-ic="spark"></i></div><div><strong>SEQUENCE<br>STUDIO</strong><small>by BROT2YOU</small></div></div>
+    <nav class="nav" id="navigation" aria-label="Navigation principale"></nav>
+    <div class="sidebar-foot"><i data-ic="spark"></i> Creative Pop Edition<br>Vos séquences, votre créativité.</div>
+  </aside>
+  <main class="workspace" id="workspace">
+    <header class="topbar">
+      <div class="crumb" id="breadcrumb"></div>
+      <div class="actions">
+        <span class="pill hide-small" id="saveState">● Enregistré</span>
+        <button class="btn ghost sq" id="undoBtn" title="Annuler la dernière modification (Ctrl+Z)" aria-label="Annuler"><i data-ic="undo"></i></button>
+        <button class="btn ghost sq" id="redoBtn" title="Rétablir (Ctrl+Y)" aria-label="Rétablir"><i data-ic="redo"></i></button>
+        <button class="btn ghost hide-small" id="importBtn"><i data-ic="upload"></i>Importer</button>
+        <button class="btn ghost hide-small" id="exportBtn"><i data-ic="download"></i>Exporter</button>
+        <button class="btn primary" id="newBtn"><i data-ic="plus"></i>Séquence</button>
+      </div>
+    </header>
+    <section class="content" id="screen"></section>
+  </main>
+</div>
+<input class="hidden" type="file" accept=".json,application/json" id="importFile">
+<div id="modal" class="modal hidden"></div>
+<div id="toast" class="toast hidden" role="status" aria-live="polite"></div>
+
+<script type="application/json" id="demo-data">
+{
+  "id": "demo-london",
+  "title": "Welcome to London!",
+  "level": "5e",
+  "axis": "Voyages et explorations",
+  "problem": "How can we help a visitor discover London?",
+  "cefr": "A1–A2",
+  "duration": "5 séances",
+  "prerequisites": "Présenter simplement un lieu et comprendre des informations courtes.",
+  "finalTask": {
+    "title": "Create an interactive London travel guide",
+    "context": "Un guide pour des visiteurs anglophones qui découvrent Londres.",
+    "audience": "English-speaking visitors",
+    "product": "Guide touristique interactif",
+    "criteria": "Informations fiables, description claire, conseils pertinents",
+    "activities": ["EE", "EOC"]
+  },
+  "objectives": [
+    {"id": "o1", "category": "Culturels", "text": "Découvrir les monuments emblématiques de Londres"},
+    {"id": "o2", "category": "Culturels", "text": "Identifier des caractéristiques de la capitale britannique"},
+    {"id": "o3", "category": "Linguistiques", "text": "There is / There are"},
+    {"id": "o4", "category": "Linguistiques", "text": "Can et lexique des monuments"},
+    {"id": "o5", "category": "Linguistiques", "text": "Prépositions de lieu et indications de direction"},
+    {"id": "o6", "category": "Pragmatiques", "text": "Décrire et localiser un monument"},
+    {"id": "o7", "category": "Pragmatiques", "text": "Conseiller et donner des indications"}
+  ],
+  "steps": [
+    {"id": "s1", "title": "Discover London", "objective": "Découvrir les monuments de Londres", "support": "Photographies et documents courts", "link": "", "duration": "1 séance", "activities": ["CO", "CE"], "intermediate": false, "notes": ""},
+    {"id": "s2", "title": "Explore the City", "objective": "Comprendre des descriptions et situer des lieux", "support": "Plan de Londres", "link": "", "duration": "1 séance", "activities": ["CE", "EE"], "intermediate": false, "notes": ""},
+    {"id": "s3", "title": "Find Your Way", "objective": "Comprendre et donner des indications", "support": "Plan et dialogue", "link": "", "duration": "1 séance", "activities": ["CO", "EOI"], "intermediate": true, "notes": ""},
+    {"id": "s4", "title": "Recommend a Place", "objective": "Présenter et recommander un monument", "support": "Documents culturels", "link": "", "duration": "1 séance", "activities": ["EOC", "EE"], "intermediate": false, "notes": ""}
+  ],
+  "links": {
+    "o1": {"s1": "I", "s2": "P", "s4": "R"},
+    "o3": {"s1": "I", "s2": "P", "s4": "E"},
+    "o4": {"s1": "I", "s4": "R"},
+    "o5": {"s3": "I"},
+    "o6": {"s2": "I", "s4": "E"},
+    "o7": {"s3": "I", "s4": "P"}
+  },
+  "updated": 0,
+  "archived": false,
+  "favorite": true
+}
+</script>
+
+<script>
 'use strict';
-const $=q=>document.querySelector(q), $$=q=>Array.from(document.querySelectorAll(q));
-const uid=()=>Math.random().toString(36).slice(2,10)+Date.now().toString(36).slice(-4);
-const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const demo=()=>({id:uid(),title:'Welcome to London!',level:'5e',axis:'Voyages et explorations',problem:'How can we help a visitor discover London?',cefr:'A1–A2',duration:'5 séances',prerequisites:'Présenter simplement un lieu et comprendre des informations courtes.',finalTask:{title:'Create an interactive London travel guide',context:'Un guide pour des visiteurs anglophones',audience:'English-speaking visitors',product:'Guide touristique interactif',criteria:'Informations fiables, description claire, conseils pertinents'},objectives:[{id:uid(),category:'Culturels',text:'Découvrir les monuments emblématiques de Londres'},{id:uid(),category:'Culturels',text:'Identifier des caractéristiques de la capitale britannique'},{id:uid(),category:'Linguistiques',text:'There is / There are'},{id:uid(),category:'Linguistiques',text:'Can et lexique des monuments'},{id:uid(),category:'Linguistiques',text:'Prépositions de lieu et indications de direction'},{id:uid(),category:'Pragmatiques',text:'Décrire et localiser un monument'},{id:uid(),category:'Pragmatiques',text:'Conseiller et donner des indications'}],steps:[{id:uid(),title:'Discover London',objective:'Découvrir les monuments de Londres',support:'Photographies et documents courts',duration:'1 séance',activities:'CO, CE',intermediate:false},{id:uid(),title:'Explore the City',objective:'Comprendre des descriptions et situer des lieux',support:'Plan de Londres',duration:'1 séance',activities:'CE, EE',intermediate:false},{id:uid(),title:'Find Your Way',objective:'Comprendre et donner des indications',support:'Plan et dialogue',duration:'1 séance',activities:'CO, EOI',intermediate:true},{id:uid(),title:'Recommend a Place',objective:'Présenter et recommander un monument',support:'Documents culturels',duration:'1 séance',activities:'EOC, EE',intermediate:false}],links:{},updated:Date.now(),archived:false,favorite:true});
-let data,activeId=null,view='dashboard',visual='stairs',history=[],redo=[];const KEY='brot2you-sequence-studio-v1';
-try{data=JSON.parse(localStorage.getItem(KEY))}catch(e){}if(!data||!Array.isArray(data.sequences)){data={sequences:[demo()]};localStorage.setItem(KEY,JSON.stringify(data))}activeId=data.sequences[0]?.id||null;
-function seq(){return data.sequences.find(x=>x.id===activeId)}
-function persist(){const e=$('#saveState');if(e)e.textContent='◌ Sauvegarde…';try{localStorage.setItem(KEY,JSON.stringify(data));if(e)e.textContent='● Enregistré'}catch(err){if(e)e.textContent='⚠ Stockage saturé';toast('Échec de la sauvegarde locale : exportez vos données.')}}
-function snapshot(){history.push(JSON.stringify(data));if(history.length>35)history.shift();redo=[]}
-function mutate(fn){snapshot();fn();if(seq())seq().updated=Date.now();persist();render()}
-function update(key,val){mutate(()=>{seq()[key]=val})}
-function toast(t){const el=$('#toast');el.textContent=t;el.classList.remove('hidden');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.add('hidden'),3300)}
-const nav=[['dashboard','▦','My Sequences'],['designer','✎','Sequence Designer'],['visual','◇','Visual Studio'],['backward','↶','Backward Design'],['dual','⊞','Dual View'],['inspector','▣','Inspector View'],['objectives','◎','Objectifs & CECRL'],['export','⇩','Export Studio']];
-function go(v){view=v;render()}
-function render(){if(!seq()&&view!=='dashboard')view='dashboard';$('#navigation').innerHTML=nav.map(([id,ico,label])=>`<button class="${view===id?'active':''}" data-nav="${id}" title="${label}"><span aria-hidden="true">${ico}</span><span class="label">${label}</span></button>`).join('');$('#breadcrumb').innerHTML=`${esc(view==='dashboard'?'My Sequences':nav.find(x=>x[0]===view)?.[2])}<small>${esc(view==='dashboard'?'Creative teaching starts here':seq()?.title||'')}</small>`;const screen=$('#screen');screen.innerHTML=({dashboard,designer,visual:visualScreen,backward,dual,inspector,objectives,export:exportScreen}[view])();$$('[data-nav]').forEach(b=>b.onclick=()=>go(b.dataset.nav));bindCommon();}
-const field=(label,key,value,kind='text')=>`<div class="field"><label>${label}</label>${kind==='textarea'?`<textarea data-field="${key}">${esc(value)}</textarea>`:`<input data-field="${key}" value="${esc(value)}">`}</div>`;
-const header=(h,sub)=>`<div class="section-heading"><div><h2>${h}</h2>${sub?`<div class="help">${sub}</div>`:''}</div></div>`;
-function dashboard(){return `<div class="hero"><h1>Vos idées prennent forme ✦</h1><p>Concevez, visualisez et partagez vos séquences d'anglais avec Creative Pop.</p></div><div class="head-with-controls">${header('My Teaching Sequences','Votre bibliothèque de séquences pédagogiques')}<input class="search" id="search" placeholder="⌕ Rechercher une séquence…"></div><div class="grid" id="cards">${cards()}</div><div class="footer-note">🔒 Vos données sont enregistrées dans ce navigateur. Pensez à exporter régulièrement une sauvegarde JSON.</div>`}
-function cards(filter=''){let items=data.sequences.filter(s=>!s.archived&&[s.title,s.level,s.axis].join(' ').toLowerCase().includes(filter.toLowerCase()));return items.length?items.map(s=>`<article class="seq-card" data-open="${s.id}"><div class="card-row"><span class="pill">✦ ${esc(s.level)}</span><span>${s.favorite?'⭐':'📚'}</span></div><h3>${esc(s.title)}</h3><div class="category-badge">${esc(s.axis||'Axe à définir')}</div><p>${esc(s.problem||'Ajoutez une problématique')}</p><div class="card-row"><span class="muted compact">▥ ${s.steps.length} étapes</span><span class="muted compact">${new Date(s.updated).toLocaleDateString('fr-FR')}</span></div><div class="hline"></div><div class="card-row"><button class="btn primary" data-open="${s.id}">Ouvrir ↗</button><button class="icon-btn" data-dup="${s.id}" title="Dupliquer">⧉</button><button class="icon-btn" data-archive="${s.id}" title="Archiver">▤</button></div></article>`).join(''):`<div class="empty">Aucune séquence trouvée. Cliquez sur « + Séquence » pour commencer.</div>`}
-function designer(){let s=seq();return `<div class="hero"><h1>Sequence Designer ✏️</h1><p>Donnez une structure solide à votre projet pédagogique.</p></div><div class="two-col"><div class="panel">${header('Identité de la séquence')}${field('Titre','title',s.title)}${field('Niveau','level',s.level)}${field('Axe culturel','axis',s.axis)}${field('Problématique','problem',s.problem,'textarea')}${field('Niveau CECRL','cefr',s.cefr)}${field('Durée prévisionnelle','duration',s.duration)}${field('Prérequis','prerequisites',s.prerequisites,'textarea')}</div><div class="panel">${header('🏆 Final Task','Le point d’aboutissement de la séquence')}${field('Intitulé','final.title',s.finalTask.title)}${field('Situation de communication','final.context',s.finalTask.context,'textarea')}${field('Destinataire','final.audience',s.finalTask.audience)}${field('Production attendue','final.product',s.finalTask.product)}${field('Critères de réussite','final.criteria',s.finalTask.criteria,'textarea')}</div></div><div class="two-col"><div class="panel">${header('🪜 Étapes de progression','Chaque étape correspond à une marche de votre escalier')}<div class="seq-list">${s.steps.map((st,i)=>`<div class="entry"><div><div class="card-row"><h4>${i+1}. ${esc(st.title)} ${st.intermediate?'🟠':''}</h4><button class="btn ghost compact" data-editstep="${st.id}">Modifier</button></div><p>${esc(st.objective)}</p></div><button class="icon-btn" data-upstep="${st.id}" title="Monter">↑</button><button class="icon-btn" data-downstep="${st.id}" title="Descendre">↓</button><button class="icon-btn" data-delstep="${st.id}" title="Supprimer">×</button></div>`).join('')}</div><button class="btn primary" data-addstep>＋ Ajouter une étape</button></div><div class="panel">${header('◎ Objectifs pédagogiques','Reliez ensuite chaque objectif aux marches dans Dual View')}<div class="seq-list">${s.objectives.map(o=>`<div class="entry category-line"><div><span class="category-badge">${esc(o.category)}</span><h4>${esc(o.text)}</h4></div><button class="icon-btn" data-editobj="${o.id}">✎</button><button class="icon-btn" data-delobj="${o.id}">×</button></div>`).join('')}</div><button class="btn primary" data-addobj>＋ Ajouter un objectif</button></div></div>`}
-function visualScreen(){let s=seq();return `<div class="hero"><h1>Visual Studio ◇</h1><p>Une séquence, plusieurs regards. Toutes vos représentations restent synchronisées.</p></div><div class="tabs">${[['stairs','🪜 Escalier'],['map','🧠 Mind Map'],['journey','↝ Learning Journey']].map(([id,l])=>`<button data-visual="${id}" class="${visual===id?'active':''}">${l}</button>`).join('')}</div><div class="panel"><div class="head-with-controls"><div><h2 style="margin:0">${esc(s.title)}</h2><p class="muted compact">${esc(s.problem)}</p></div><div class="actions no-print"><button class="btn ghost" id="pngBtn">↧ PNG</button><button class="btn ghost" onclick="window.print()">⎙ PDF / Imprimer</button></div></div><div id="visual-area">${visual==='stairs'?stairs():visual==='map'?mindmap():journey()}</div></div><p class="help">Cliquez sur une étape pour la modifier. Dans la Mind Map, cliquez sur un objectif pour le modifier. Les boutons d'export PNG exportent la vue courante.</p>`}
-function stairs(){let s=seq(),steps=[...s.steps,{id:'final',title:s.finalTask.title,objective:s.finalTask.product,duration:'Tâche finale',intermediate:false}];return `<div class="stair-scroller"><div class="stairs">${steps.map((st,i)=>`<button class="step ${st.id==='final'?'final-step':''}" data-number="${st.id==='final'?'🏆 FINAL TASK':`STEP ${i+1}`}" data-editstep="${st.id==='final'?'final':st.id}" style="height:${Math.min(370,165+i*37)}px"><h4>${esc(st.title)}</h4><p>${esc(st.objective)}</p><span>${st.intermediate?'● INTERMEDIATE TASK':esc(st.duration||'ÉTAPE')}</span></button>`).join('')}</div></div>`}
-function mindmap(){let s=seq(),objectives=s.objectives;let groups=['Culturels','Linguistiques','Pragmatiques','Sociolinguistiques','Méthodologiques','Activités langagières','Séances','Tâche finale'];let colors=['#ffab73','#6bb9f8','#ae8cf0','#f38ac2','#52cba0','#9265e8','#4169f5','#ffc857'];let nodes=[];groups.forEach((cat,i)=>{let angle=(i/groups.length)*Math.PI*2-Math.PI/2,x=570+Math.cos(angle)*340,y=300+Math.sin(angle)*228;let objs=cat==='Séances'?s.steps.map(st=>st.title):cat==='Tâche finale'?[s.finalTask.title]:objectives.filter(o=>o.category===cat).map(o=>o.text);nodes.push({cat,x,y,color:colors[i],items:objs.slice(0,3),id:cat})});let lines=nodes.map(n=>`<path d="M 570 300 Q ${(570+n.x)/2} ${Math.min(300,n.y)-26} ${n.x} ${n.y}" stroke="${n.color}" stroke-width="4" fill="none" opacity=".65"/>`).join('');let boxes=nodes.map(n=>`<g class="node-wrap" data-mgroup="${esc(n.id)}"><rect x="${n.x-118}" y="${n.y-40}" width="236" height="${Math.max(80,58+n.items.length*23)}" rx="19" fill="#fff" stroke="${n.color}" stroke-width="3"/><rect x="${n.x-118}" y="${n.y-40}" width="236" height="35" rx="17" fill="${n.color}"/><text x="${n.x}" y="${n.y-17}" text-anchor="middle" font-size="14" font-weight="800" fill="#26324b">${esc(n.cat)}</text>${n.items.map((t,j)=>`<text x="${n.x}" y="${n.y+10+j*22}" font-size="11" text-anchor="middle" fill="#26324b">${esc(t.length>33?t.slice(0,31)+'…':t)}</text>`).join('')}${n.items.length===0?`<text x="${n.x}" y="${n.y+19}" font-size="11" text-anchor="middle">＋ Ajouter</text>`:''}</g>`).join('');return `<div class="canvas mindmap"><svg id="mapSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1140 640" role="img" aria-label="Carte mentale de la séquence"><rect width="1140" height="640" fill="white"/>${lines}<rect x="428" y="244" width="284" height="112" rx="24" fill="#4169f5"/><text x="570" y="278" text-anchor="middle" font-size="21" font-weight="900" fill="white">${esc(s.title.length>24?s.title.slice(0,22)+'…':s.title)}</text><foreignObject x="453" y="292" width="234" height="48"><div xmlns="http://www.w3.org/1999/xhtml" style="color:white;text-align:center;font:12px sans-serif;line-height:1.3">${esc(s.problem)}</div></foreignObject>${boxes}</svg></div>`}
-function journey(){let s=seq();return `<div class="timeline"><div class="t-node" style="background:#e7ebff"><b>🚀 START</b><p class="help">${esc(s.prerequisites)}</p></div>${s.steps.map((st,i)=>`<div class="arrow">→</div><button class="t-node" data-editstep="${st.id}"><b>STEP ${i+1}</b><h3>${esc(st.title)}</h3><p class="help">${esc(st.objective)}</p>${st.intermediate?'<span class="pill">Intermediate task</span>':''}</button>`).join('')}<div class="arrow">→</div><button class="t-node" data-editstep="final" style="background:#fff0c1"><b>🏆 FINAL TASK</b><h3>${esc(s.finalTask.title)}</h3></button></div>`}
-function backward(){let s=seq();return `<div class="hero"><h1>Backward Design ↶</h1><p>Commencez par la tâche finale pour construire les apprentissages nécessaires.</p></div><div class="backward"><div class="backward-goal"><span class="pill">🏆 01 · FINAL TASK</span><h2>${esc(s.finalTask.title||'Définir la tâche finale')}</h2><p>${esc(s.finalTask.context||'Décrivez la situation de communication.')}</p>${field('Tâche finale','final.title',s.finalTask.title)}${field('Production attendue','final.product',s.finalTask.product)}${field('Critères de réussite','final.criteria',s.finalTask.criteria,'textarea')}<p class="help">La tâche finale est partagée avec toutes les autres vues.</p></div><div class="backward-box"><span class="pill">◎ 02 · COMPÉTENCES</span><h2>Quels savoirs et savoir-faire mobiliser ?</h2>${s.objectives.map(o=>`<div class="entry"><div><span class="category-badge">${esc(o.category)}</span> ${esc(o.text)}</div></div>`).join('')}<button class="btn ghost" data-addobj>＋ Ajouter un objectif</button></div><div class="backward-box"><span class="pill">◈ 03 · ÉTAPES</span><h2>Préparer la tâche finale</h2>${s.steps.map((st,i)=>`<div class="entry"><div><b>${i+1}. ${esc(st.title)}</b><p>${esc(st.objective)}</p></div><button class="icon-btn" data-editstep="${st.id}">✎</button></div>`).join('')}<button class="btn ghost" data-addstep>＋ Ajouter une étape</button></div><div class="backward-box" style="background:#edf0ff"><span class="pill">🪜 04 · PARCOURS</span><h2>Construire l'escalier</h2><p class="help">Les étapes saisies alimentent automatiquement l'escalier pédagogique et le Dual View.</p><button class="btn primary" data-goto="visual">Voir le Learning Path →</button></div></div>`}
-function matrixContent(){let s=seq();return `<div class="matrix-scroll"><table class="matrix"><thead><tr><th>Objectif</th>${s.steps.map((st,i)=>`<th>${i+1}. ${esc(st.title)}</th>`).join('')}</tr></thead><tbody>${s.objectives.map(o=>`<tr><td><span class="category-badge">${esc(o.category)}</span><br>${esc(o.text)}</td>${s.steps.map(st=>`<td><select aria-label="Progression de ${esc(o.text)} dans ${esc(st.title)}" data-link="${o.id}|${st.id}"><option value="">—</option>${[['I','Introduit'],['P','Entraîné'],['R','Réinvesti'],['E','Évalué']].map(([k,t])=>`<option value="${k}" ${(s.links?.[o.id]?.[st.id]||'')===k?'selected':''}>${t}</option>`).join('')}</select></td>`).join('')}</tr>`).join('')}</tbody></table></div>`}
-function dual(){let s=seq();let total=s.objectives.length*s.steps.length,filled=Object.values(s.links||{}).reduce((n,o)=>n+Object.values(o).filter(Boolean).length,0);return `<div class="hero"><h1>Dual View ⊞</h1><p>Reliez la progression de votre séquence aux objectifs pédagogiques.</p></div><div class="stats"><div class="stat"><b>${s.steps.length}</b> étapes</div><div class="stat"><b>${s.objectives.length}</b> objectifs</div><div class="stat"><b>${filled}/${total}</b> liens renseignés</div></div><div class="panel" style="margin-top:20px"><h2>🪜 Learning Path</h2>${stairs()}</div><div class="panel"><h2>◎ Matrice de progression</h2><p class="help">Pour chaque objectif, indiquez son statut dans chaque séance. Les changements sont enregistrés immédiatement.</p>${matrixContent()}</div>`}
-function miniStairs(){let s=seq();return `<div class="mini-stairs">${[...s.steps,{title:'FINAL TASK'}].map((st,i)=>`<div style="height:${Math.min(145,48+24*i)}px">${i+1}. ${esc(st.title)}</div>`).join('')}</div>`}
-function inspector(){let s=seq();return `<div class="hero no-print"><h1>Inspector View ▣</h1><p>Une synthèse claire et professionnelle de votre séquence.</p></div><div class="head-with-controls no-print" style="margin-bottom:20px"><span class="help">Version prête pour présentation et impression.</span><button class="btn primary" onclick="window.print()">⎙ Exporter PDF / Imprimer</button></div><article class="preview" id="inspector-preview"><div class="colorbar"></div><div class="card-row"><span class="pill">ENGLISH · ${esc(s.level)} · ${esc(s.cefr)}</span><span class="muted">SEQUENCE STUDIO by BROT2YOU</span></div><h1>${esc(s.title)}</h1><h3>${esc(s.problem)}</h3><p class="muted">Axe culturel : ${esc(s.axis)} · Durée : ${esc(s.duration)}</p><div class="hline"></div><h2>◎ Learning Objectives</h2><div class="grid">${['Culturels','Linguistiques','Pragmatiques','Sociolinguistiques','Méthodologiques'].map(cat=>{let a=s.objectives.filter(o=>o.category===cat);return a.length?`<div class="entry"><div><span class="category-badge">${cat}</span><p style="line-height:1.6;margin-top:9px;color:var(--text)">${a.map(o=>esc(o.text)).join('<br>')}</p></div></div>`:''}).join('')}</div><h2>🪜 Learning Path</h2>${miniStairs()}<h2>🏆 Final Task</h2><div class="final"><h3>${esc(s.finalTask.title)}</h3><p>${esc(s.finalTask.context)}</p><p><b>Destinataire :</b> ${esc(s.finalTask.audience)}<br><b>Production :</b> ${esc(s.finalTask.product)}<br><b>Critères :</b> ${esc(s.finalTask.criteria)}</p></div><div class="footer-note">Synthèse pédagogique générée avec SEQUENCE STUDIO — by BROT2YOU</div></article>`}
-function objectives(){let s=seq(),cats=['Culturels','Linguistiques','Pragmatiques','Sociolinguistiques','Méthodologiques','Activités langagières'];return `<div class="hero"><h1>Objectifs & CECRL ◎</h1><p>Des objectifs transparents, liés à votre progression et à la tâche finale.</p></div><div class="note">Les références officielles aux programmes et au CECRL ne sont pas encore intégrées à cette première version. Les objectifs ci-dessous sont modifiables et ne constituent pas des citations réglementaires.</div><div class="two-col">${cats.map(cat=>`<div class="panel"><div class="head-with-controls"><h2>${esc(cat)}</h2><button class="btn ghost" data-addobjcat="${esc(cat)}">＋</button></div>${s.objectives.filter(o=>o.category===cat).map(o=>`<div class="entry"><div>${esc(o.text)}</div><button class="icon-btn" data-editobj="${o.id}">✎</button><button class="icon-btn" data-delobj="${o.id}">×</button></div>`).join('')||'<p class="help">Aucun objectif renseigné.</p>'}</div>`).join('')}</div>`}
-function exportScreen(){return `<div class="hero"><h1>Export Studio ⇩</h1><p>Sauvegardez, partagez et présentez votre travail.</p></div><div class="two-col"><div class="panel"><h2>📦 Sauvegarde de projet</h2><p class="help">Exportez l'ensemble de vos séquences en JSON pour les réimporter sur cet appareil ou un autre.</p><button class="btn primary" id="jsonDownload">↧ Télécharger JSON</button></div><div class="panel"><h2>📄 Dossier professionnel</h2><p class="help">La Vue inspecteur est optimisée pour l'impression. Dans la fenêtre d'impression, choisissez « Enregistrer au format PDF ».</p><button class="btn primary" data-goto="inspector">Ouvrir Inspector View</button></div><div class="panel"><h2>🎨 Image de votre visualisation</h2><p class="help">La carte mentale et l'escalier peuvent être exportés sous forme d'image PNG.</p><button class="btn primary" data-goto="visual">Ouvrir Visual Studio</button></div><div class="panel"><h2>🔐 Confidentialité</h2><p class="help">Vos données sont enregistrées localement dans ce navigateur. Aucun compte n'est nécessaire. Effacer les données du navigateur peut supprimer les séquences non exportées.</p><button class="btn ghost" id="jsonImport">↥ Importer une sauvegarde</button></div></div>`}
-function ask(message,def=''){let x=prompt(message,def);return x===null?null:x.trim()}
-function editStep(id){let s=seq();if(id==='final'){go('designer');return}let st=s.steps.find(x=>x.id===id);if(!st)return;let title=ask('Titre de l’étape',st.title);if(title===null||!title)return;let objective=ask('Objectif / production attendue',st.objective);if(objective===null)return;let duration=ask('Durée',st.duration);if(duration===null)return;let support=ask('Supports',st.support||'');if(support===null)return;let intermediate=confirm('Cette étape comporte-t-elle une tâche intermédiaire ?\nOK : oui · Annuler : non');mutate(()=>Object.assign(st,{title,objective,duration,support,intermediate}))}
-function addStep(){let title=ask('Titre de la nouvelle étape','New step');if(!title)return;let objective=ask('Objectif principal','');if(objective===null)return;mutate(()=>seq().steps.push({id:uid(),title,objective,duration:'1 séance',support:'',activities:'',intermediate:false}))}
-function addObjective(cat){let category=cat||ask('Catégorie (Culturels, Linguistiques, Pragmatiques, Sociolinguistiques, Méthodologiques, Activités langagières)','Linguistiques');if(!category)return;let t=ask('Formulation de l’objectif','');if(!t)return;mutate(()=>seq().objectives.push({id:uid(),category,text:t}))}
-function editObj(id){let o=seq().objectives.find(x=>x.id===id);if(!o)return;let text=ask('Modifier l’objectif',o.text);if(text===null||!text)return;mutate(()=>o.text=text)}
-function download(name,content,mime){let blob=new Blob([content],{type:mime}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500)}
-function saveJSON(){download('sequence-studio-sauvegarde.json',JSON.stringify({app:'SEQUENCE STUDIO',version:1,sequences:data.sequences},null,2),'application/json');toast('Sauvegarde JSON téléchargée')}
-function doImport(file){if(!file)return;const r=new FileReader();r.onload=()=>{try{let o=JSON.parse(r.result);if(!Array.isArray(o.sequences)||o.sequences.length>500)throw Error('Format invalide');for(let s of o.sequences){if(!s||typeof s.id!=='string'||!Array.isArray(s.steps)||!Array.isArray(s.objectives)||!s.finalTask)throw Error('Séquence invalide')}if(!confirm('Remplacer votre bibliothèque actuelle par les séquences importées ? Exportez d’abord une sauvegarde si nécessaire.'))return;snapshot();data={sequences:o.sequences};activeId=data.sequences[0]?.id||null;persist();go('dashboard');toast('Séquences importées')}catch(e){toast('Import impossible : '+e.message)}};r.readAsText(file);$('#importFile').value=''}
-function exportPNG(){let node=$('#visual-area');if(!node)return;if(visual==='map'){let svg=$('#mapSvg').cloneNode(true);let xml=new XMLSerializer().serializeToString(svg);drawSvgPNG(xml,1140,640);return}let text=seq();let w=Math.max(1160,text.steps.length*210+360),h=600,svg=`<svg xmlns="http://www.w3.org/2000/svg" width="${w}" height="${h}" viewBox="0 0 ${w} ${h}"><rect width="100%" height="100%" fill="#faf9f6"/><text x="45" y="65" font-family="Arial" font-size="32" font-weight="bold" fill="#26324b">${esc(text.title)}</text><text x="45" y="98" font-family="Arial" font-size="17" fill="#68748b">${esc(text.problem)}</text>${[...text.steps,{title:text.finalTask.title,objective:text.finalTask.product}].map((st,i)=>{let x=35+i*205,y=470-i*64,height=90+i*60;return `<rect x="${x}" y="${y-height+90}" width="192" height="${height}" rx="15" fill="${i===text.steps.length?'#ffc857':['#d9edff','#eaddff','#d5faea','#ffe3de','#fff0c7'][i%5]}"/><text x="${x+15}" y="${y-height+126}" font-size="13" font-family="Arial" font-weight="bold" fill="#26324b">${esc((i===text.steps.length?'FINAL TASK':`STEP ${i+1}`))}</text><text x="${x+15}" y="${y-height+151}" font-size="13" font-family="Arial" fill="#26324b">${esc(st.title.slice(0,24))}</text></svg>`}).join('')}</svg>`;drawSvgPNG(svg,w,h)}
-function drawSvgPNG(src,w,h){const img=new Image,blob=new Blob([src],{type:'image/svg+xml;charset=utf-8'}),url=URL.createObjectURL(blob);img.onload=()=>{let c=document.createElement('canvas');c.width=w*2;c.height=h*2;let ctx=c.getContext('2d');ctx.scale(2,2);ctx.drawImage(img,0,0,w,h);c.toBlob(b=>{if(b){let u=URL.createObjectURL(b),a=document.createElement('a');a.href=u;a.download='sequence-studio-'+visual+'.png';a.click();setTimeout(()=>URL.revokeObjectURL(u),1000)}},'image/png');URL.revokeObjectURL(url)};img.onerror=()=>toast('Erreur de génération PNG');img.src=url}
-function bindCommon(){const screen=$('#screen');$$('[data-field]').forEach(el=>{el.onchange=()=>{let key=el.dataset.field,v=el.value;mutate(()=>{if(key.startsWith('final.'))seq().finalTask[key.slice(6)]=v;else seq()[key]=v})}});$$('[data-open]').forEach(el=>el.onclick=e=>{e.stopPropagation();activeId=el.dataset.open;go('designer')});$$('[data-dup]').forEach(el=>el.onclick=e=>{e.stopPropagation();let o=data.sequences.find(s=>s.id===el.dataset.dup);mutate(()=>{let n=structuredClone(o);n.id=uid();n.title+=' (copie)';n.updated=Date.now();data.sequences.push(n)})});$$('[data-archive]').forEach(el=>el.onclick=e=>{e.stopPropagation();if(confirm('Archiver cette séquence ?'))mutate(()=>data.sequences.find(s=>s.id===el.dataset.archive).archived=true)});$$('[data-visual]').forEach(el=>el.onclick=()=>{visual=el.dataset.visual;render()});$$('[data-editstep]').forEach(el=>el.onclick=()=>editStep(el.dataset.editstep));$$('[data-delstep]').forEach(el=>el.onclick=()=>{if(confirm('Supprimer cette étape ?'))mutate(()=>{seq().steps=seq().steps.filter(st=>st.id!==el.dataset.delstep)})});$$('[data-upstep],[data-downstep]').forEach(el=>el.onclick=()=>{let id=el.dataset.upstep||el.dataset.downstep,delta=el.dataset.upstep?-1:1;mutate(()=>{let arr=seq().steps,i=arr.findIndex(st=>st.id===id),j=i+delta;if(i>=0&&j>=0&&j<arr.length)[arr[i],arr[j]]=[arr[j],arr[i]]})});$$('[data-addstep]').forEach(el=>el.onclick=addStep);$$('[data-addobj]').forEach(el=>el.onclick=()=>addObjective());$$('[data-addobjcat]').forEach(el=>el.onclick=()=>addObjective(el.dataset.addobjcat));$$('[data-editobj]').forEach(el=>el.onclick=()=>editObj(el.dataset.editobj));$$('[data-delobj]').forEach(el=>el.onclick=()=>{if(confirm('Supprimer cet objectif ?'))mutate(()=>{seq().objectives=seq().objectives.filter(o=>o.id!==el.dataset.delobj);delete seq().links[el.dataset.delobj]})});$$('[data-goto]').forEach(el=>el.onclick=()=>go(el.dataset.goto));$$('[data-link]').forEach(el=>el.onchange=()=>{let [o,st]=el.dataset.link.split('|'),val=el.value;mutate(()=>{seq().links[o]??={};if(val)seq().links[o][st]=val;else delete seq().links[o][st]})});$$('[data-mgroup]').forEach(el=>el.onclick=()=>{if(el.dataset.mgroup==='Séances')go('designer');else if(el.dataset.mgroup==='Tâche finale')go('designer');else go('objectives')});if($('#search'))$('#search').oninput=e=>{let q=e.target.value;$('#cards').innerHTML=cards(q);$$('[data-open]').forEach(el=>el.onclick=e=>{e.stopPropagation();activeId=el.dataset.open;go('designer')});$$('[data-dup]').forEach(el=>el.onclick=e=>{e.stopPropagation();let o=data.sequences.find(s=>s.id===el.dataset.dup);mutate(()=>{let n=structuredClone(o);n.id=uid();n.title+=' (copie)';data.sequences.push(n)})})};if($('#pngBtn'))$('#pngBtn').onclick=exportPNG;if($('#jsonDownload'))$('#jsonDownload').onclick=saveJSON;if($('#jsonImport'))$('#jsonImport').onclick=()=>$('#importFile').click()}
-$('#newBtn').onclick=()=>{let title=ask('Nom de la nouvelle séquence','My New Sequence');if(!title)return;mutate(()=>{let s={id:uid(),title,level:'5e',axis:'',problem:'',cefr:'A1–A2',duration:'',prerequisites:'',finalTask:{title:'',context:'',audience:'',product:'',criteria:''},objectives:[],steps:[],links:{},updated:Date.now(),archived:false,favorite:false};data.sequences.unshift(s);activeId=s.id});go('designer')};$('#importBtn').onclick=()=>$('#importFile').click();$('#importFile').onchange=e=>doImport(e.target.files?.[0]);$('#exportBtn').onclick=()=>go('export');document.addEventListener('keydown',e=>{if((e.ctrlKey||e.metaKey)&&e.key==='z'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();if(history.length){redo.push(JSON.stringify(data));data=JSON.parse(history.pop());persist();render()}}if((e.ctrlKey||e.metaKey)&&e.key==='y'&&!['INPUT','TEXTAREA'].includes(document.activeElement.tagName)){e.preventDefault();if(redo.length){history.push(JSON.stringify(data));data=JSON.parse(redo.pop());persist();render()}}});render();
-</script></body></html>
+var KEY = 'brot2you-sequence-studio-v1';
+var CATS = ['Culturels', 'Linguistiques', 'Pragmatiques', 'Sociolinguistiques', 'Méthodologiques', 'Activités langagières'];
+var ACTS = [
+  ['CO', 'Compréhension de l’oral'],
+  ['CE', 'Compréhension de l’écrit'],
+  ['EOC', 'Expression orale en continu'],
+  ['EOI', 'Expression orale en interaction'],
+  ['EE', 'Expression écrite'],
+  ['MED', 'Médiation']
+];
+var ICONS = { "spark": "<path class=\"f\" d=\"M12 2.5l2.2 6.3 6.3 2.2-6.3 2.2L12 19.5l-2.2-6.3L3.5 11l6.3-2.2z\"/><path d=\"M19 17v4.5M16.75 19.25h4.5\"/>", "pencil": "<path class=\"f\" d=\"M15.5 4.5l4 4L9 19l-5 1 1-5z\"/><path d=\"M13 7l4 4\"/>", "shapes": "<circle class=\"f\" cx=\"8\" cy=\"8.5\" r=\"4.5\"/><path d=\"M16 3.5l4.5 8h-9z\"/><rect x=\"11.5\" y=\"14\" width=\"8.5\" height=\"6.5\" rx=\"1.5\"/>", "flag": "<path d=\"M5.5 21V3.5\"/><path class=\"f\" d=\"M5.5 4h13l-3 4.5 3 4.5h-13\"/>", "grid": "<rect class=\"f\" x=\"3.5\" y=\"3.5\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"13.5\" y=\"3.5\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect x=\"3.5\" y=\"13.5\" width=\"7\" height=\"7\" rx=\"1.5\"/><rect class=\"f\" x=\"13.5\" y=\"13.5\" width=\"7\" height=\"7\" rx=\"1.5\"/>", "clipboard": "<rect class=\"f\" x=\"4.5\" y=\"4.5\" width=\"15\" height=\"17\" rx=\"2.5\"/><path d=\"M9 3h6v3H9z\"/><path d=\"M8.5 13.5l2.5 2.5 4.5-5\"/>", "target": "<circle cx=\"12\" cy=\"12\" r=\"8.5\"/><circle class=\"f\" cx=\"12\" cy=\"12\" r=\"5\"/><circle cx=\"12\" cy=\"12\" r=\"1.3\"/>", "download": "<path class=\"f\" d=\"M4 15.5v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3\"/><path d=\"M12 3.5v11M7.5 10l4.5 4.5 4.5-4.5\"/>", "upload": "<path class=\"f\" d=\"M4 15.5v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3\"/><path d=\"M12 14.5v-11M7.5 8L12 3.5 16.5 8\"/>", "plus": "<path d=\"M12 5v14M5 12h14\" stroke-width=\"2.8\"/>", "undo": "<path d=\"M9 14L4 9l5-5\"/><path d=\"M4 9h10.5a5.5 5.5 0 0 1 0 11H11\"/>", "redo": "<path d=\"M15 14l5-5-5-5\"/><path d=\"M20 9H9.5a5.5 5.5 0 0 0 0 11H13\"/>", "copy": "<rect class=\"f\" x=\"8.5\" y=\"8.5\" width=\"12\" height=\"12\" rx=\"2.5\"/><path d=\"M15.5 8.5V5.5a2 2 0 0 0-2-2h-8a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h3\"/>", "archive": "<rect class=\"f\" x=\"3\" y=\"4\" width=\"18\" height=\"5\" rx=\"1.5\"/><path d=\"M5 9v9.5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V9M10 13h4\"/>", "trash": "<path class=\"f\" d=\"M6 6.5l1 13a1.5 1.5 0 0 0 1.5 1.5h7a1.5 1.5 0 0 0 1.5-1.5l1-13\"/><path d=\"M4 6.5h16M9.5 6.5v-2h5v2M10 10.5v6M14 10.5v6\"/>", "restore": "<path class=\"f\" d=\"M5 10v8.5a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V10\"/><path d=\"M12 17V4.5M8 8.5l4-4 4 4\"/>", "up": "<path d=\"M6 15l6-6 6 6\" stroke-width=\"2.6\"/>", "down": "<path d=\"M6 9l6 6 6-6\" stroke-width=\"2.6\"/>", "close": "<path d=\"M6.5 6.5l11 11M17.5 6.5l-11 11\" stroke-width=\"2.6\"/>", "star": "<path class=\"f\" d=\"M12 3l2.7 5.6 6.1.8-4.4 4.3 1 6.1L12 17l-5.4 2.8 1-6.1-4.4-4.3 6.1-.8z\"/>", "print": "<path d=\"M7 9V3.5h10V9\"/><rect class=\"f\" x=\"3.5\" y=\"9\" width=\"17\" height=\"8\" rx=\"2\"/><path d=\"M7 14h10v6.5H7z\" fill=\"#fff\"/>", "image": "<rect class=\"f\" x=\"3.5\" y=\"4.5\" width=\"17\" height=\"15\" rx=\"2.5\"/><circle cx=\"9\" cy=\"9.5\" r=\"1.8\"/><path d=\"M4 17l5-5 4 4 2.5-2.5L20 18\"/>", "stairs": "<path class=\"f\" d=\"M3.5 20.5v-4h4.5v-4.5h4.5V7.5H17V3.5h3.5v17z\"/>", "mindmap": "<circle class=\"f\" cx=\"12\" cy=\"12\" r=\"3.5\"/><circle cx=\"5\" cy=\"5\" r=\"2\"/><circle cx=\"19\" cy=\"5\" r=\"2\"/><circle cx=\"5\" cy=\"19\" r=\"2\"/><circle cx=\"19\" cy=\"19\" r=\"2\"/><path d=\"M6.5 6.5l3 3M17.5 6.5l-3 3M6.5 17.5l3-3M17.5 17.5l-3-3\"/>", "route": "<circle class=\"f\" cx=\"6\" cy=\"18\" r=\"2.5\"/><circle class=\"f\" cx=\"18\" cy=\"6\" r=\"2.5\"/><path d=\"M8.5 18H15a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h6.5\"/>", "trophy": "<path class=\"f\" d=\"M7 3.5h10v5a5 5 0 0 1-10 0z\"/><path d=\"M7 5.5H4a3 3 0 0 0 3 4M17 5.5h3a3 3 0 0 1-3 4M12 13.5v4M8.5 20.5h7M10 17.5h4\"/>", "clock": "<circle class=\"f\" cx=\"12\" cy=\"12\" r=\"8.5\"/><path d=\"M12 7.5V12l3 2\"/>", "rocket": "<path class=\"f\" d=\"M12 3c3.5 2 5 5.5 5 9l-2.5 3.5h-5L7 12c0-3.5 1.5-7 5-9z\"/><circle cx=\"12\" cy=\"9.5\" r=\"1.6\"/><path d=\"M9.5 15.5L8 20.5l4-2 4 2-1.5-5\"/>", "lock": "<rect class=\"f\" x=\"4.5\" y=\"10.5\" width=\"15\" height=\"10\" rx=\"2.5\"/><path d=\"M8 10.5V8a4 4 0 0 1 8 0v2.5M12 14.5v2\"/>", "bolt": "<path class=\"f\" d=\"M13 2.5L5 13.5h6l-1 8 8-11h-6z\"/>", "package": "<path class=\"f\" d=\"M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z\"/><path d=\"M3.5 7.5L12 12l8.5-4.5M12 12v9\"/>", "share": "<circle class=\"f\" cx=\"18\" cy=\"5.5\" r=\"2.5\"/><circle class=\"f\" cx=\"6\" cy=\"12\" r=\"2.5\"/><circle class=\"f\" cx=\"18\" cy=\"18.5\" r=\"2.5\"/><path d=\"M8.3 10.8l7.4-4M8.3 13.2l7.4 4\"/>", "doc": "<path class=\"f\" d=\"M6 2.5h8l4.5 4.5v13a1.5 1.5 0 0 1-1.5 1.5H6a1.5 1.5 0 0 1-1.5-1.5v-16A1.5 1.5 0 0 1 6 2.5z\"/><path d=\"M14 2.5V7h4.5M8 12h8M8 16h5\"/>", "open": "<path d=\"M8 16L16 8M9.5 8H16v6.5\" stroke-width=\"2.5\"/>", "arrow": "<path d=\"M4 12h15M13.5 6.5L19 12l-5.5 5.5\" stroke-width=\"2.6\"/>", "dumbbell": "<path d=\"M6.5 12h11\"/><rect class=\"f\" x=\"3\" y=\"7.5\" width=\"3.5\" height=\"9\" rx=\"1.2\"/><rect class=\"f\" x=\"17.5\" y=\"7.5\" width=\"3.5\" height=\"9\" rx=\"1.2\"/>", "chat": "<path class=\"f\" d=\"M4 5.5h16v10H10l-4.5 4v-4H4z\"/><path d=\"M8 9.5h8M8 12.5h5\"/>", "link": "<path d=\"M10 14a4 4 0 0 0 5.7 0l3-3a4 4 0 0 0-5.7-5.7l-1 1M14 10a4 4 0 0 0-5.7 0l-3 3a4 4 0 0 0 5.7 5.7l1-1\"/>" };
+function ic(name, cls) { return '<svg class="i' + (cls ? ' ' + cls : '') + '" viewBox="0 0 24 24" aria-hidden="true" focusable="false">' + (ICONS[name] || '') + '</svg>'; }
+var STATUS = [['I', 'Introduit'], ['P', 'Entraîné'], ['R', 'Réinvesti'], ['E', 'Évalué']];
+var CYCLE = ['', 'I', 'P', 'R', 'E'];
+var LEVELS = ['6e', '5e', '4e', '3e', '2nde', '1re', 'Tle'];
+var CEFRS = ['A1', 'A1–A2', 'A2', 'A2–B1', 'B1', 'B1–B2', 'B2', 'B2–C1'];
+var NAV = [
+  ['dashboard', 'spark', 'My Sequences', '#3d5afe', '#fff'],
+  ['designer', 'pencil', 'Sequence Designer', '#ff4fa3', '#fff'],
+  ['visual', 'shapes', 'Visual Studio', '#ff8a3d', '#1b1f3b'],
+  ['backward', 'flag', 'Backward Design', '#2ee6a8', '#1b1f3b'],
+  ['dual', 'grid', 'Dual View', '#8b5cf6', '#fff'],
+  ['inspector', 'clipboard', 'Inspector View', '#ffd23f', '#1b1f3b'],
+  ['objectives', 'target', 'Objectifs & CECRL', '#22b8f0', '#1b1f3b'],
+  ['export', 'download', 'Export Studio', '#b8f15a', '#1b1f3b']
+];
+
+var data = null, activeId = null, view = 'dashboard', visual = 'stairs', dashTab = 'active', query = '';
+var undoStack = [], redoStack = [], editSnap = false, saveTimer = null, lastFocus = null;
+
+/* ---------- helpers ---------- */
+function $(q) { return document.querySelector(q); }
+function $$(q) { return Array.prototype.slice.call(document.querySelectorAll(q)); }
+function uid() { return Math.random().toString(36).slice(2, 10) + Date.now().toString(36).slice(-4); }
+function esc(s) {
+  return String(s == null ? '' : s).replace(/[&<>"']/g, function (c) {
+    return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c];
+  });
+}
+function str(v) { return typeof v === 'string' ? v : (v == null ? '' : String(v)); }
+function clone(o) { return JSON.parse(JSON.stringify(o)); }
+function isObj(o) { return !!o && typeof o === 'object' && !Array.isArray(o); }
+function findBy(arr, key, val) { for (var i = 0; i < arr.length; i++) { if (arr[i][key] === val) return arr[i]; } return null; }
+function indexBy(arr, key, val) { for (var i = 0; i < arr.length; i++) { if (arr[i][key] === val) return i; } return -1; }
+function on(sel, evt, fn) { $$(sel).forEach(function (el) { el['on' + evt] = function (e) { fn(el, e); }; }); }
+function attr(el, name) { return el.getAttribute(name); }
+function seq() { return activeId ? findBy(data.sequences, 'id', activeId) : null; }
+function isUrl(u) { return /^https?:\/\/\S+$/i.test(str(u).trim()); }
+function plural(n, one, many) { return n + ' ' + (n > 1 ? many : one); }
+function actName(code) { return code === 'MED' ? 'Médiation' : code; }
+function actFull(code) { var a = findBy(ACTS.map(function (x) { return { c: x[0], n: x[1] }; }), 'c', code); return a ? a.n : code; }
+function wrap(t, max, lines) {
+  var words = str(t).split(/\s+/), out = [], cur = '';
+  for (var i = 0; i < words.length; i++) {
+    var w = words[i];
+    if (!w) continue;
+    if (w.length > max) w = w.slice(0, max - 1) + '…';
+    if (!cur) cur = w;
+    else if ((cur + ' ' + w).length <= max) cur += ' ' + w;
+    else { out.push(cur); cur = w; }
+  }
+  if (cur) out.push(cur);
+  if (out.length > lines) {
+    out = out.slice(0, lines);
+    var last = out[lines - 1];
+    out[lines - 1] = (last.length > max - 1 ? last.slice(0, max - 1) : last) + '…';
+  }
+  return out;
+}
+function slug(t) {
+  var s = str(t).toLowerCase();
+  if (s.normalize) s = s.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+  return s.replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '').slice(0, 50) || 'sequence';
+}
+
+/* ---------- data model ---------- */
+function parseActs(v) {
+  var list = Array.isArray(v) ? v : str(v).split(/[\s,;\/+]+/);
+  var out = [];
+  list.forEach(function (x) {
+    var c = str(x).toUpperCase().replace(/[ÉÈ]/g, 'E');
+    if (c === 'MEDIATION' || c === 'MÉD' || c === 'MEDIAT') c = 'MED';
+    if (c === 'EO') c = 'EOC';
+    var ok = false;
+    for (var i = 0; i < ACTS.length; i++) { if (ACTS[i][0] === c) ok = true; }
+    if (ok && out.indexOf(c) < 0) out.push(c);
+  });
+  return out;
+}
+function normalize(raw) {
+  var s = isObj(raw) ? raw : {};
+  var ft = isObj(s.finalTask) ? s.finalTask : {};
+  var n = {
+    id: str(s.id) || uid(),
+    title: str(s.title) || 'Séquence sans titre',
+    level: str(s.level), axis: str(s.axis), problem: str(s.problem), cefr: str(s.cefr),
+    duration: str(s.duration), prerequisites: str(s.prerequisites),
+    finalTask: {
+      title: str(ft.title), context: str(ft.context), audience: str(ft.audience),
+      product: str(ft.product), criteria: str(ft.criteria), activities: parseActs(ft.activities)
+    },
+    objectives: (Array.isArray(s.objectives) ? s.objectives : []).filter(isObj).map(function (o) {
+      return { id: str(o.id) || uid(), category: str(o.category) || 'Linguistiques', text: str(o.text) };
+    }),
+    steps: (Array.isArray(s.steps) ? s.steps : []).filter(isObj).map(function (st) {
+      return {
+        id: str(st.id) || uid(), title: str(st.title) || 'Étape', objective: str(st.objective),
+        support: str(st.support), link: str(st.link), duration: str(st.duration),
+        activities: parseActs(st.activities), intermediate: !!st.intermediate, notes: str(st.notes)
+      };
+    }),
+    links: {},
+    updated: typeof s.updated === 'number' && s.updated > 0 ? s.updated : Date.now(),
+    archived: !!s.archived,
+    favorite: !!s.favorite
+  };
+  var L = isObj(s.links) ? s.links : {};
+  n.objectives.forEach(function (o) {
+    var row = isObj(L[o.id]) ? L[o.id] : null;
+    if (!row) return;
+    n.steps.forEach(function (st) {
+      if (CYCLE.indexOf(row[st.id]) > 0) {
+        if (!n.links[o.id]) n.links[o.id] = {};
+        n.links[o.id][st.id] = row[st.id];
+      }
+    });
+  });
+  return n;
+}
+function reId(s) {
+  var om = {}, sm = {}, links = {};
+  s.id = uid();
+  s.objectives.forEach(function (o) { var k = uid(); om[o.id] = k; o.id = k; });
+  s.steps.forEach(function (st) { var k = uid(); sm[st.id] = k; st.id = k; });
+  for (var o in s.links) {
+    if (!s.links.hasOwnProperty(o) || !om[o]) continue;
+    links[om[o]] = {};
+    for (var st in s.links[o]) { if (s.links[o].hasOwnProperty(st) && sm[st]) links[om[o]][sm[st]] = s.links[o][st]; }
+  }
+  s.links = links;
+  return s;
+}
+function demoSeq() {
+  var s = normalize(JSON.parse($('#demo-data').textContent));
+  reId(s);
+  s.updated = Date.now();
+  return s;
+}
+function load() {
+  var raw = null;
+  try { raw = JSON.parse(localStorage.getItem(KEY)); } catch (e) { raw = null; }
+  if (raw && Array.isArray(raw.sequences)) {
+    data = { sequences: raw.sequences.filter(isObj).map(normalize) };
+  } else {
+    data = { sequences: [demoSeq()] };
+  }
+  var first = firstActive();
+  activeId = first ? first.id : null;
+  persist();
+}
+function firstActive() {
+  var list = sortedSeqs(false);
+  return list.length ? list[0] : null;
+}
+function sortedSeqs(archived) {
+  return data.sequences.filter(function (s) { return s.archived === archived; }).sort(function (a, b) {
+    if (a.favorite !== b.favorite) return a.favorite ? -1 : 1;
+    return b.updated - a.updated;
+  });
+}
+
+/* ---------- persistence & history ---------- */
+function setSave(t) { var e = $('#saveState'); if (e) e.textContent = t; }
+function persist() {
+  clearTimeout(saveTimer); saveTimer = null;
+  try {
+    localStorage.setItem(KEY, JSON.stringify(data));
+    setSave('● Enregistré');
+  } catch (err) {
+    setSave('⚠ Non enregistré');
+    toast('Sauvegarde locale impossible : exportez vos séquences en JSON.');
+  }
+}
+function persistSoon() { setSave('◌ Sauvegarde…'); clearTimeout(saveTimer); saveTimer = setTimeout(persist, 450); }
+function snapshot() {
+  undoStack.push(JSON.stringify({ d: data, a: activeId }));
+  if (undoStack.length > 40) undoStack.shift();
+  redoStack = [];
+  updateUndo();
+}
+function mutate(fn, noTouch) {
+  snapshot();
+  fn();
+  var s = seq();
+  if (s && !noTouch) s.updated = Date.now();
+  persist();
+  render();
+}
+function restore(stackFrom, stackTo, msg) {
+  if (!stackFrom.length) return;
+  if (saveTimer) persist();
+  stackTo.push(JSON.stringify({ d: data, a: activeId }));
+  var st = JSON.parse(stackFrom.pop());
+  data = st.d; activeId = st.a;
+  persist(); render(); toast(msg);
+}
+function doUndo() { restore(undoStack, redoStack, 'Modification annulée'); }
+function doRedo() { restore(redoStack, undoStack, 'Modification rétablie'); }
+function updateUndo() {
+  var u = $('#undoBtn'), r = $('#redoBtn');
+  if (u) u.disabled = !undoStack.length;
+  if (r) r.disabled = !redoStack.length;
+}
+function toast(t) {
+  var el = $('#toast');
+  el.textContent = t; el.classList.remove('hidden');
+  clearTimeout(toast.t);
+  toast.t = setTimeout(function () { el.classList.add('hidden'); }, 3200);
+}
+
+/* ---------- modal ---------- */
+function openModal(o) {
+  if ($('#modal').classList.contains('hidden')) lastFocus = document.activeElement;
+  var b = o.buttons || [];
+  var html = '<div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modal-title">' +
+    '<div class="modal-head"><h2 id="modal-title">' + (o.icon ? ic(o.icon) + ' ' : '') + esc(o.title) + '</h2><button class="icon-btn" data-mclose aria-label="Fermer">' + ic('close') + '</button></div>' +
+    '<div class="modal-body">' + o.body + '</div><div class="modal-foot">';
+  b.forEach(function (btn, i) {
+    if (btn.spacer) { html += '<span class="spacer"></span>'; return; }
+    html += '<button class="btn ' + (btn.cls || '') + '" data-mbtn="' + i + '">' + esc(btn.label) + '</button>';
+  });
+  html += '</div></div>';
+  var m = $('#modal');
+  m.innerHTML = html;
+  m.classList.remove('hidden');
+  on('#modal [data-mclose]', 'click', closeModal);
+  on('#modal [data-mbtn]', 'click', function (el) {
+    var btn = b[+attr(el, 'data-mbtn')];
+    if (btn.onClick && btn.onClick() === false) return;
+    closeModal();
+    if (btn.after) btn.after();
+  });
+  if (o.onMount) o.onMount();
+  $$('#modal input,#modal textarea').forEach(function (el) {
+    el.addEventListener('input', function () { var e = $('#m-err'); if (e) e.classList.add('hidden'); });
+  });
+  var first = m.querySelector('input:not([type=checkbox]),textarea,select') || m.querySelector('[data-mbtn]');
+  if (first) { try { first.focus(); } catch (e) { } }
+}
+function closeModal() {
+  var m = $('#modal');
+  if (m.classList.contains('hidden')) return;
+  m.classList.add('hidden'); m.innerHTML = '';
+  if (lastFocus && lastFocus.focus && document.body.contains(lastFocus)) { try { lastFocus.focus(); } catch (e) { } }
+}
+function confirmBox(title, msg, yesLabel, onYes, danger) {
+  openModal({
+    title: title,
+    body: '<p class="help" style="font-size:15px;color:var(--text)">' + esc(msg) + '</p>',
+    buttons: [{ label: 'Annuler', cls: 'ghost' }, { label: yesLabel, cls: danger ? 'danger' : 'primary', after: onYes }]
+  });
+}
+function mField(label, id, value, kind, ph) {
+  var p = ph ? ' placeholder="' + esc(ph) + '"' : '';
+  return '<div class="field"><label for="' + id + '">' + label + '</label>' +
+    (kind === 'textarea' ? '<textarea id="' + id + '"' + p + '>' + esc(value) + '</textarea>' :
+      '<input id="' + id + '" value="' + esc(value) + '"' + p + (kind === 'url' ? ' type="url" inputmode="url"' : '') + '>') + '</div>';
+}
+function mSelect(label, id, value, options) {
+  var opts = options.slice();
+  if (value && opts.indexOf(value) < 0) opts.push(value);
+  return '<div class="field"><label for="' + id + '">' + label + '</label><select id="' + id + '">' +
+    opts.map(function (x) { return '<option' + (x === value ? ' selected' : '') + '>' + esc(x) + '</option>'; }).join('') + '</select></div>';
+}
+function val(id) { var el = document.getElementById(id); return el ? el.value.trim() : ''; }
+function actPicker(selected, attrName) {
+  return '<div class="act-pick" role="group" aria-label="Activités langagières">' + ACTS.map(function (a) {
+    return '<button type="button" class="act-toggle" ' + attrName + '="' + a[0] + '" aria-pressed="' + (selected.indexOf(a[0]) >= 0) + '" title="' + esc(a[1]) + '">' + actName(a[0]) + '</button>';
+  }).join('') + '</div>';
+}
+function bindModalActs() {
+  on('#modal [data-mact]', 'click', function (el) { el.setAttribute('aria-pressed', attr(el, 'aria-pressed') === 'true' ? 'false' : 'true'); });
+}
+function readModalActs() {
+  return $$('#modal [data-mact]').filter(function (el) { return attr(el, 'aria-pressed') === 'true'; }).map(function (el) { return attr(el, 'data-mact'); });
+}
+function showErr(msg) { var e = $('#m-err'); if (e) { e.textContent = msg; e.classList.remove('hidden'); } }
+
+/* ---------- editors ---------- */
+function editStep(id) {
+  var s = seq(); if (!s) return;
+  if (id === 'final') { editFinal(); return; }
+  var st = id ? findBy(s.steps, 'id', id) : null;
+  if (id && !st) return;
+  var v = st || { title: '', objective: '', support: '', link: '', duration: '1 séance', activities: [], intermediate: false, notes: '' };
+  var num = st ? indexBy(s.steps, 'id', id) + 1 : s.steps.length + 1;
+  var body = mField('Titre de l’étape', 'm-title', v.title, 'text', 'Ex. Find your way') +
+    mField('Objectif / production attendue', 'm-objective', v.objective, 'textarea') +
+    '<div class="field"><span class="flabel">Activités langagières travaillées</span>' + actPicker(v.activities, 'data-mact') + '</div>' +
+    '<div class="two-col tight">' + mField('Durée', 'm-duration', v.duration, 'text', '1 séance') + mField('Lien vers le document', 'm-link', v.link, 'url', 'https://…') + '</div>' +
+    mField('Supports (documents authentiques)', 'm-support', v.support, 'textarea', 'Titre, source, nature du document…') +
+    '<label class="check"><input type="checkbox" id="m-inter"' + (v.intermediate ? ' checked' : '') + '> Cette étape comporte une tâche intermédiaire</label>' +
+    mField('Notes de déroulé', 'm-notes', v.notes, 'textarea', 'Mise en œuvre, différenciation, trace écrite…') +
+    '<p class="err hidden" id="m-err"></p>';
+  var buttons = [];
+  if (st) buttons.push({ label: 'Supprimer', cls: 'danger', after: function () { askDeleteStep(id); } }, { spacer: true });
+  buttons.push({ label: 'Annuler', cls: 'ghost' }, {
+    label: st ? 'Enregistrer' : 'Ajouter l’étape', cls: 'primary', onClick: function () {
+      var title = val('m-title');
+      if (!title) { showErr('Donnez un titre à l’étape.'); return false; }
+      var link = val('m-link');
+      if (link && !isUrl(link)) { showErr('Le lien doit commencer par http:// ou https://'); return false; }
+      var p = {
+        title: title, objective: val('m-objective'), duration: val('m-duration'), link: link,
+        support: val('m-support'), activities: readModalActs(), intermediate: $('#m-inter').checked, notes: val('m-notes')
+      };
+      mutate(function () {
+        var cur = seq();
+        if (st) {
+          var target = findBy(cur.steps, 'id', id);
+          for (var k in p) { if (p.hasOwnProperty(k)) target[k] = p[k]; }
+        } else { p.id = uid(); cur.steps.push(p); }
+      });
+      toast(st ? 'Étape enregistrée' : 'Étape ajoutée');
+    }
+  });
+  openModal({ title: (st ? 'Étape ' + num : 'Nouvelle étape'), icon: 'stairs', body: body, buttons: buttons, onMount: bindModalActs });
+}
+function askDeleteStep(id) {
+  var st = findBy(seq().steps, 'id', id); if (!st) return;
+  confirmBox('Supprimer l’étape ?', '« ' + st.title + ' » et ses liens dans la matrice de progression seront supprimés. Vous pourrez revenir en arrière avec le bouton Annuler.', 'Supprimer', function () {
+    mutate(function () {
+      var s = seq();
+      s.steps = s.steps.filter(function (x) { return x.id !== id; });
+      for (var o in s.links) { if (s.links.hasOwnProperty(o)) delete s.links[o][id]; }
+    });
+    toast('Étape supprimée');
+  }, true);
+}
+function editFinal() {
+  var f = seq().finalTask;
+  var body = mField('Intitulé', 'm-ftitle', f.title) +
+    mField('Situation de communication', 'm-fcontext', f.context, 'textarea') +
+    '<div class="two-col tight">' + mField('Destinataire', 'm-faudience', f.audience) + mField('Production attendue', 'm-fproduct', f.product) + '</div>' +
+    '<div class="field"><span class="flabel">Activités langagières mobilisées</span>' + actPicker(f.activities, 'data-mact') + '</div>' +
+    mField('Critères de réussite', 'm-fcriteria', f.criteria, 'textarea');
+  openModal({
+    title: 'Tâche finale', icon: 'trophy', body: body, onMount: bindModalActs,
+    buttons: [{ label: 'Annuler', cls: 'ghost' }, {
+      label: 'Enregistrer', cls: 'primary', onClick: function () {
+        var p = { title: val('m-ftitle'), context: val('m-fcontext'), audience: val('m-faudience'), product: val('m-fproduct'), criteria: val('m-fcriteria'), activities: readModalActs() };
+        mutate(function () { seq().finalTask = p; });
+        toast('Tâche finale enregistrée');
+      }
+    }]
+  });
+}
+function editObj(id, cat) {
+  var s = seq(); if (!s) return;
+  var o = id ? findBy(s.objectives, 'id', id) : null;
+  if (id && !o) return;
+  var body = mSelect('Catégorie', 'm-cat', o ? o.category : (cat || 'Linguistiques'), CATS) +
+    mField('Formulation de l’objectif', 'm-text', o ? o.text : '', 'textarea', 'Ex. Donner des indications pour se repérer') +
+    '<p class="err hidden" id="m-err"></p>';
+  var buttons = [];
+  if (o) buttons.push({ label: 'Supprimer', cls: 'danger', after: function () { askDeleteObj(id); } }, { spacer: true });
+  buttons.push({ label: 'Annuler', cls: 'ghost' }, {
+    label: o ? 'Enregistrer' : 'Ajouter l’objectif', cls: 'primary', onClick: function () {
+      var text = val('m-text'), category = val('m-cat');
+      if (!text) { showErr('Formulez l’objectif.'); return false; }
+      mutate(function () {
+        var cur = seq();
+        if (o) { var t = findBy(cur.objectives, 'id', id); t.text = text; t.category = category; }
+        else cur.objectives.push({ id: uid(), category: category, text: text });
+      });
+      toast(o ? 'Objectif enregistré' : 'Objectif ajouté');
+    }
+  });
+  openModal({ title: o ? 'Objectif' : 'Nouvel objectif', icon: 'target', body: body, buttons: buttons });
+}
+function askDeleteObj(id) {
+  var o = findBy(seq().objectives, 'id', id); if (!o) return;
+  confirmBox('Supprimer l’objectif ?', '« ' + o.text + ' » et sa ligne dans la matrice de progression seront supprimés.', 'Supprimer', function () {
+    mutate(function () {
+      var s = seq();
+      s.objectives = s.objectives.filter(function (x) { return x.id !== id; });
+      delete s.links[id];
+    });
+    toast('Objectif supprimé');
+  }, true);
+}
+function newSequence() {
+  var body = mField('Titre', 'm-title', '', 'text', 'Ex. Welcome to London!') +
+    '<div class="two-col tight">' + mSelect('Niveau', 'm-level', '5e', LEVELS) + mSelect('Niveau CECRL visé', 'm-cefr', 'A1–A2', CEFRS) + '</div>' +
+    mField('Axe culturel', 'm-axis', '', 'text') +
+    mField('Problématique', 'm-problem', '', 'textarea') +
+    '<p class="err hidden" id="m-err"></p>';
+  openModal({
+    title: 'Nouvelle séquence', icon: 'spark', body: body,
+    buttons: [{ label: 'Annuler', cls: 'ghost' }, {
+      label: 'Créer la séquence', cls: 'primary', onClick: function () {
+        var title = val('m-title');
+        if (!title) { showErr('Donnez un titre à la séquence.'); return false; }
+        var s = normalize({ title: title, level: val('m-level'), cefr: val('m-cefr'), axis: val('m-axis'), problem: val('m-problem') });
+        mutate(function () { data.sequences.unshift(s); activeId = s.id; view = 'designer'; });
+        toast('Séquence créée');
+      }
+    }]
+  });
+}
+
+/* ---------- analysis ---------- */
+function coverage(s) {
+  var res = {};
+  ACTS.forEach(function (a) { res[a[0]] = { n: 0, fin: false }; });
+  s.steps.forEach(function (st) { st.activities.forEach(function (c) { if (res[c]) res[c].n++; }); });
+  s.finalTask.activities.forEach(function (c) { if (res[c]) res[c].fin = true; });
+  return res;
+}
+function diag(s, o) {
+  var row = s.links[o.id] || {}, n = 0, hasE = false;
+  s.steps.forEach(function (st) { var v = row[st.id]; if (v) { n++; if (v === 'E') hasE = true; } });
+  if (!s.steps.length) return { c: 'info', t: 'Aucune étape', n: 0 };
+  if (n === 0) return { c: 'bad', t: 'Non travaillé', n: 0 };
+  if (n === 1) return { c: 'warn', t: '1 séance : à reprendre', n: 1 };
+  if (!hasE) return { c: 'info', t: 'Pas encore évalué', n: n };
+  return { c: 'ok', t: 'Spirale ✓', n: n };
+}
+function linkCount(s) {
+  var n = 0;
+  for (var o in s.links) { if (s.links.hasOwnProperty(o)) { for (var k in s.links[o]) { if (s.links[o].hasOwnProperty(k) && s.links[o][k]) n++; } } }
+  return n;
+}
+function coverageHtml(s) {
+  var cov = coverage(s), total = s.steps.length || 1, rows = '', alerts = [];
+  ACTS.forEach(function (a) {
+    var c = cov[a[0]], pct = Math.round(c.n / total * 100);
+    rows += '<div class="cov-row"><span><span class="act act-' + a[0] + '">' + actName(a[0]) + '</span> <span class="muted">' + esc(a[1].replace('Compréhension', 'Compr.').replace('Expression', 'Expr.')) + '</span></span>' +
+      '<div class="cov-bar" aria-hidden="true"><i class="act-' + a[0] + '" style="width:' + pct + '%"></i></div>' +
+      '<span class="n">' + plural(c.n, 'étape', 'étapes') + (c.fin ? ' + ' + ic('trophy') : '') + '</span></div>';
+    if (c.fin && c.n === 0) alerts.push(actFull(a[0]) + ' est mobilisée dans la tâche finale sans être entraînée dans aucune étape.');
+    else if (c.fin && c.n === 1) alerts.push(actFull(a[0]) + ' (tâche finale) n’est entraînée qu’une fois avant l’évaluation.');
+  });
+  if (!s.finalTask.activities.length) alerts.push('Indiquez les activités langagières de la tâche finale pour vérifier qu’elles sont préparées.');
+  var list = alerts.length ? alerts.map(function (t) { return '<li>' + esc(t) + '</li>'; }).join('') :
+    '<li class="good">Chaque activité langagière de la tâche finale est entraînée plusieurs fois en amont.</li>';
+  return '<div class="cov">' + rows + '</div><ul class="alerts">' + list + '</ul>';
+}
+
+/* ---------- small renderers ---------- */
+function actsHtml(list) {
+  if (!list || !list.length) return '';
+  return '<span class="acts">' + list.map(function (c) { return '<span class="act act-' + c + '" title="' + esc(actFull(c)) + '">' + actName(c) + '</span>'; }).join('') + '</span>';
+}
+function hero(title, text, slim, extra) {
+  var n = NAV[0];
+  NAV.forEach(function (x) { if (x[0] === view) n = x; });
+  var words = title.split(' ');
+  if (words.length > 1 && !/[A-Za-z\u00C0-\u00FF]/.test(words[words.length - 1])) words.pop();
+  var light = n[4] === '#fff';
+  var style = '--hc:' + n[3] + ';--ht:' + n[4] + ';--dot:' + (light ? 'rgba(255,255,255,.28)' : 'rgba(27,31,59,.16)') + ';--sk:' + (n[3] === '#ffd23f' ? '#ff4fa3' : '#ffd23f');
+  return '<div class="hero' + (slim ? ' slim' : '') + (extra ? ' ' + extra : '') + '" style="' + style + '"><span class="sticker" aria-hidden="true">' + ic(n[1]) + '</span><h1>' + words.join(' ') + '</h1><p>' + text + '</p></div>';
+}
+function catBadge(cat) {
+  var i = CATS.indexOf(cat);
+  return '<span class="category-badge' + (i >= 0 ? ' cat' + i : '') + '">' + esc(cat) + '</span>';
+}
+function heading(h, sub, right) {
+  return '<div class="section-heading"><div><h2>' + h + '</h2>' + (sub ? '<p class="help" style="margin:4px 0 0">' + sub + '</p>' : '') + '</div>' + (right || '') + '</div>';
+}
+function field(label, key, value, kind) {
+  var id = 'f-' + key.replace('.', '-');
+  return '<div class="field"><label for="' + id + '">' + label + '</label>' +
+    (kind === 'textarea' ? '<textarea id="' + id + '" data-field="' + key + '">' + esc(value) + '</textarea>' :
+      '<input id="' + id + '" data-field="' + key + '" value="' + esc(value) + '">') + '</div>';
+}
+function fieldSelect(label, key, value, options) {
+  var id = 'f-' + key, opts = options.slice();
+  if (value && opts.indexOf(value) < 0) opts.push(value);
+  if (!value) opts.unshift('');
+  return '<div class="field"><label for="' + id + '">' + label + '</label><select id="' + id + '" data-field="' + key + '">' +
+    opts.map(function (x) { return '<option value="' + esc(x) + '"' + (x === value ? ' selected' : '') + '>' + (x ? esc(x) : '—') + '</option>'; }).join('') + '</select></div>';
+}
+
+/* ---------- screens ---------- */
+function dashboard() {
+  var nArch = sortedSeqs(true).length;
+  return hero('Vos idées prennent forme', 'Concevez, visualisez et partagez vos séquences d’anglais, de la tâche finale à chaque marche de l’escalier.') +
+    '<div class="head-with-controls"><div class="seg" role="tablist">' +
+    '<button role="tab" data-dtab="active" aria-selected="' + (dashTab === 'active') + '" class="' + (dashTab === 'active' ? 'active' : '') + '">Mes séquences</button>' +
+    '<button role="tab" data-dtab="archived" aria-selected="' + (dashTab === 'archived') + '" class="' + (dashTab === 'archived' ? 'active' : '') + '">Archives (' + nArch + ')</button></div>' +
+    '<input class="search" id="search" type="search" placeholder="Rechercher (titre, niveau, axe)…" value="' + esc(query) + '" aria-label="Rechercher une séquence"></div>' +
+    '<div class="grid" id="cards">' + cards() + '</div>' +
+    '<p class="footer-note">' + ic('lock') + 'Vos séquences restent dans ce navigateur. Exportez régulièrement une sauvegarde JSON (Export Studio).</p>';
+}
+function cards() {
+  var q = query.toLowerCase();
+  var items = sortedSeqs(dashTab === 'archived').filter(function (s) {
+    return [s.title, s.level, s.axis, s.problem].join(' ').toLowerCase().indexOf(q) >= 0;
+  });
+  if (!items.length) {
+    if (dashTab === 'archived') return '<div class="empty">Aucune séquence archivée.</div>';
+    return '<div class="empty">' + (q ? 'Aucune séquence ne correspond à « ' + esc(query) + ' ».' : 'Aucune séquence pour l’instant.<br><br><button class="btn primary" data-new>' + ic('plus') + 'Créer ma première séquence</button>') + '</div>';
+  }
+  return items.map(function (s, ci) {
+    var arch = s.archived;
+    var actions = arch ?
+      '<button class="btn primary small" data-restore="' + s.id + '">' + ic('restore') + 'Restaurer</button><button class="icon-btn del" data-delete="' + s.id + '" title="Supprimer définitivement" aria-label="Supprimer définitivement">' + ic('trash') + '</button>' :
+      '<button class="btn primary small" data-open="' + s.id + '">Ouvrir' + ic('open') + '</button><button class="icon-btn" data-dup="' + s.id + '" title="Dupliquer" aria-label="Dupliquer">' + ic('copy') + '</button><button class="icon-btn" data-archive="' + s.id + '" title="Archiver" aria-label="Archiver">' + ic('archive') + '</button>';
+    return '<article class="seq-card pc' + (ci % 6) + '"' + (arch ? '' : ' data-open="' + s.id + '"') + '>' +
+      '<div class="band"><span class="pill">' + ic('spark') + '' + esc(s.level || 'Niveau ?') + (s.cefr ? ' · ' + esc(s.cefr) : '') + '</span>' +
+      (arch ? '' : '<button class="star" data-fav="' + s.id + '" aria-pressed="' + s.favorite + '" title="' + (s.favorite ? 'Retirer des favoris' : 'Ajouter aux favoris') + '" aria-label="Favori">' + ic('star') + '</button>') + '</div><div class="body">' +
+      '<h3>' + esc(s.title) + '</h3><div><span class="category-badge">' + esc(s.axis || 'Axe à définir') + '</span></div>' +
+      '<p>' + esc(s.problem || 'Ajoutez une problématique') + '</p>' +
+      '<div class="card-row muted" style="font-size:13px;margin-bottom:12px"><span class="meta">' + ic('stairs') + plural(s.steps.length, 'étape', 'étapes') + ic('target') + plural(s.objectives.length, 'objectif', 'objectifs') + '</span><span>' + new Date(s.updated).toLocaleDateString('fr-FR') + '</span></div>' +
+      '<div class="card-actions">' + actions + '</div></div></article>';
+  }).join('');
+}
+function designer() {
+  var s = seq(), f = s.finalTask;
+  var stepsHtml = s.steps.map(function (st, i) {
+    return '<div class="entry"><div><h4>' + (i + 1) + '. ' + esc(st.title) + ' ' + (st.intermediate ? '<span class="tag">Tâche intermédiaire</span>' : '') + '</h4>' +
+      (st.objective ? '<p>' + esc(st.objective) + '</p>' : '') +
+      '<div class="card-row" style="justify-content:flex-start;flex-wrap:wrap">' + actsHtml(st.activities) + (st.duration ? '<span class="muted" style="font-size:12px">' + ic('clock') + ' ' + esc(st.duration) + '</span>' : '') + '</div></div>' +
+      '<button class="icon-btn" data-upstep="' + st.id + '" title="Monter" aria-label="Monter"' + (i === 0 ? ' disabled' : '') + '>' + ic('up') + '</button>' +
+      '<button class="icon-btn" data-downstep="' + st.id + '" title="Descendre" aria-label="Descendre"' + (i === s.steps.length - 1 ? ' disabled' : '') + '>' + ic('down') + '</button>' +
+      '<button class="icon-btn" data-editstep="' + st.id + '" title="Modifier" aria-label="Modifier">' + ic('pencil') + '</button></div>';
+  }).join('') || '<p class="help">Aucune étape. Ajoutez la première marche de votre escalier.</p>';
+  var objHtml = s.objectives.map(function (o) {
+    return '<div class="entry"><div>' + catBadge(o.category) + '<h4 style="margin-top:6px">' + esc(o.text) + '</h4></div><button class="icon-btn" data-editobj="' + o.id + '" aria-label="Modifier">' + ic('pencil') + '</button></div>';
+  }).join('') || '<p class="help">Aucun objectif pour l’instant.</p>';
+  return hero('Sequence Designer', 'Donnez une structure solide à votre projet pédagogique.', true) +
+    '<div class="two-col"><div class="panel">' + heading('Identité de la séquence') +
+    field('Titre', 'title', s.title) +
+    '<div class="two-col tight">' + fieldSelect('Niveau', 'level', s.level, LEVELS) + fieldSelect('Niveau CECRL visé', 'cefr', s.cefr, CEFRS) + '</div>' +
+    field('Axe culturel', 'axis', s.axis) + field('Problématique', 'problem', s.problem, 'textarea') +
+    field('Durée prévisionnelle', 'duration', s.duration) + field('Prérequis', 'prerequisites', s.prerequisites, 'textarea') + '</div>' +
+    '<div class="panel">' + heading(ic('trophy') + ' Final Task', 'Le point d’aboutissement de la séquence') +
+    field('Intitulé', 'final.title', f.title) + field('Situation de communication', 'final.context', f.context, 'textarea') +
+    field('Destinataire', 'final.audience', f.audience) + field('Production attendue', 'final.product', f.product) +
+    '<div class="field"><span class="flabel">Activités langagières mobilisées</span>' + actPicker(f.activities, 'data-ftact') + '</div>' +
+    field('Critères de réussite', 'final.criteria', f.criteria, 'textarea') + '</div></div>' +
+    '<div class="two-col"><div class="panel">' + heading(ic('stairs') + ' Étapes de progression', 'Chaque étape est une marche de votre escalier.') +
+    '<div class="seq-list">' + stepsHtml + '</div><button class="btn primary" data-addstep style="margin-top:8px">' + ic('plus') + 'Ajouter une étape</button></div>' +
+    '<div class="panel">' + heading(ic('target') + ' Objectifs pédagogiques', 'Reliez-les ensuite aux étapes dans Dual View.') +
+    '<div class="seq-list">' + objHtml + '</div><button class="btn primary" data-addobj style="margin-top:8px">' + ic('plus') + 'Ajouter un objectif</button></div></div>';
+}
+function visualScreen() {
+  var s = seq();
+  var area = visual === 'map' ? mindmap() : visual === 'journey' ? journey() : stairs();
+  return hero('Visual Studio', 'Une séquence, plusieurs regards. Toutes les représentations restent synchronisées.', true) +
+    '<div class="tabs" role="tablist">' + [['stairs', 'stairs', 'Escalier'], ['map', 'mindmap', 'Mind Map'], ['journey', 'route', 'Learning Journey']].map(function (t) {
+      return '<button role="tab" aria-selected="' + (visual === t[0]) + '" data-visual="' + t[0] + '" class="' + (visual === t[0] ? 'active' : '') + '">' + ic(t[1]) + t[2] + '</button>';
+    }).join('') + '</div>' +
+    '<div class="panel"><div class="head-with-controls"><div><h2 style="margin:0">' + esc(s.title) + '</h2><p class="help" style="margin:4px 0 0">' + esc(s.problem) + '</p></div>' +
+    '<div class="actions no-print"><button class="btn ghost" data-png>' + ic('image') + 'Image PNG</button><button class="btn ghost" data-print>' + ic('print') + 'Imprimer / PDF</button></div></div>' +
+    '<div id="visual-area">' + area + '</div></div>' +
+    '<p class="help">Cliquez sur une étape pour la modifier, ou sur un bloc de la Mind Map pour ouvrir la section correspondante. L’export PNG reprend la Mind Map quand elle est affichée, sinon l’escalier.</p>';
+}
+function stairs() {
+  var s = seq(), n = s.steps.length;
+  var inc = n ? Math.min(40, 200 / n) : 0;
+  var html = s.steps.map(function (st, i) {
+    return '<button class="step c' + (i % 5) + '" data-editstep="' + st.id + '" style="height:' + Math.round(170 + i * inc) + 'px">' +
+      '<span class="num">STEP ' + (i + 1) + '</span><h4>' + esc(st.title) + '</h4><p>' + esc(wrap(st.objective, 200, 1)[0] || '') + '</p>' +
+      actsHtml(st.activities) + '<span class="foot">' + (st.intermediate ? ic('bolt') + ' Tâche intermédiaire' : esc(st.duration || 'Étape')) + '</span></button>';
+  }).join('');
+  html += '<button class="step final" data-editstep="final" style="height:' + Math.round(170 + n * inc + 20) + 'px"><span class="num">' + ic('trophy') + 'FINAL TASK</span><h4>' + esc(s.finalTask.title || 'Définir la tâche finale') + '</h4><p>' + esc(s.finalTask.product) + '</p>' + actsHtml(s.finalTask.activities) + '</button>';
+  return '<div class="stair-scroller"><div class="stairs">' + html + '</div></div>';
+}
+function mindmapSvg() {
+  var s = seq(), cov = coverage(s);
+  var groups = ['Culturels', 'Linguistiques', 'Pragmatiques', 'Sociolinguistiques', 'Méthodologiques', 'Activités langagières', 'Séances', 'Tâche finale'];
+  var colors = ['#ff8a3d', '#22b8f0', '#8b5cf6', '#ff4fa3', '#2ee6a8', '#b8f15a', '#3d5afe', '#ffd23f'];
+  var heads = ['#1b1f3b', '#1b1f3b', '#ffffff', '#ffffff', '#1b1f3b', '#1b1f3b', '#ffffff', '#1b1f3b'];
+  var W = 1140, H = 690, CX = 570, CY = 340;
+  var lines = '', boxes = '';
+  groups.forEach(function (cat, i) {
+    var angle = (i / groups.length) * Math.PI * 2 - Math.PI / 2;
+    var x = CX + Math.cos(angle) * 350, y = CY + Math.sin(angle) * 240;
+    var items;
+    if (cat === 'Séances') items = s.steps.map(function (st, j) { return (j + 1) + '. ' + st.title; });
+    else if (cat === 'Tâche finale') items = s.finalTask.title ? [s.finalTask.title] : [];
+    else {
+      items = s.objectives.filter(function (o) { return o.category === cat; }).map(function (o) { return o.text; });
+      if (cat === 'Activités langagières') {
+        var parts = [];
+        ACTS.forEach(function (a) { if (cov[a[0]].n) parts.push(actName(a[0]) + '×' + cov[a[0]].n); });
+        var covLines = [];
+        for (var k = 0; k < parts.length; k += 3) covLines.push(parts.slice(k, k + 3).join('   '));
+        items = covLines.concat(items);
+      }
+    }
+    var more = items.length > 3 ? items.length - 3 : 0;
+    items = items.slice(0, 3);
+    if (more) items.push('+ ' + more + ' autre' + (more > 1 ? 's' : ''));
+    var h = Math.max(82, 50 + items.length * 21);
+    var top = y - 40, left = x - 120, color = colors[i];
+    lines += '<path d="M ' + CX + ' ' + CY + ' Q ' + ((CX + x) / 2) + ' ' + (Math.min(CY, y) - 26) + ' ' + x + ' ' + y + '" stroke="#1b1f3b" stroke-width="3" fill="none"/>';
+    boxes += '<g class="node-wrap" data-mgroup="' + esc(cat) + '" tabindex="0" role="button" aria-label="' + esc(cat) + '">' +
+      '<rect x="' + (left + 5) + '" y="' + (top + 5) + '" width="240" height="' + h + '" rx="19" fill="#1b1f3b"/>' +
+      '<rect class="box" x="' + left + '" y="' + top + '" width="240" height="' + h + '" rx="19" fill="#fff" stroke="#1b1f3b" stroke-width="3"/>' +
+      '<path d="M ' + (left + 1.5) + ' ' + (top + 36) + ' V ' + (top + 19) + ' Q ' + (left + 1.5) + ' ' + (top + 1.5) + ' ' + (left + 19) + ' ' + (top + 1.5) + ' H ' + (left + 221) + ' Q ' + (left + 238.5) + ' ' + (top + 1.5) + ' ' + (left + 238.5) + ' ' + (top + 19) + ' V ' + (top + 36) + ' Z" fill="' + color + '"/>' +
+      '<line x1="' + left + '" y1="' + (top + 36) + '" x2="' + (left + 240) + '" y2="' + (top + 36) + '" stroke="#1b1f3b" stroke-width="3"/>' +
+      '<text x="' + x + '" y="' + (top + 24) + '" text-anchor="middle" font-size="15" font-weight="800" fill="' + heads[i] + '">' + esc(cat) + '</text>' +
+      items.map(function (t, j) { return '<text x="' + x + '" y="' + (top + 59 + j * 21) + '" font-size="12" font-weight="600" text-anchor="middle" fill="#1b1f3b">' + esc(t.length > 34 ? t.slice(0, 32) + '…' : t) + '</text>'; }).join('') +
+      (items.length === 0 ? '<text x="' + x + '" y="' + (top + 63) + '" font-size="12" text-anchor="middle" fill="#7a7299">＋ Ajouter</text>' : '') + '</g>';
+  });
+  var tl = wrap(s.title, 24, 1)[0] || '', pl = wrap(s.problem, 36, 2);
+  var center = '<rect x="' + (CX - 139) + '" y="' + (CY - 52) + '" width="290" height="116" rx="24" fill="#1b1f3b"/><rect x="' + (CX - 145) + '" y="' + (CY - 58) + '" width="290" height="116" rx="24" fill="#3d5afe" stroke="#1b1f3b" stroke-width="3"/>' +
+    '<text x="' + CX + '" y="' + (CY - 18) + '" text-anchor="middle" font-size="21" font-weight="900" fill="#fff">' + esc(tl) + '</text>' +
+    pl.map(function (t, j) { return '<text x="' + CX + '" y="' + (CY + 10 + j * 17) + '" text-anchor="middle" font-size="12.5" fill="#fff" opacity=".92">' + esc(t) + '</text>'; }).join('');
+  return '<svg id="mapSvg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ' + W + ' ' + H + '" width="' + W + '" height="' + H + '" font-family="Arial, Helvetica, sans-serif" role="img" aria-label="Carte mentale de la séquence">' +
+    '<rect width="' + W + '" height="' + H + '" fill="#f8f6ff"/>' + lines + center + boxes + '</svg>';
+}
+function mindmap() { return '<div class="canvas mindmap">' + mindmapSvg() + '</div>'; }
+function journey() {
+  var s = seq();
+  return '<div class="timeline"><div class="t-node start"><b>' + ic('rocket') + ' START</b><p class="help" style="margin-top:8px">' + esc(s.prerequisites || 'Précisez les prérequis dans Sequence Designer.') + '</p></div>' +
+    s.steps.map(function (st, i) {
+      return '<div class="arrow" aria-hidden="true">' + ic('arrow') + '</div><button class="t-node" data-editstep="' + st.id + '"><b>STEP ' + (i + 1) + '</b><h3>' + esc(st.title) + '</h3><p class="help">' + esc(st.objective) + '</p>' + actsHtml(st.activities) + (st.intermediate ? '<p style="margin:8px 0 0"><span class="tag">Tâche intermédiaire</span></p>' : '') + '</button>';
+    }).join('') +
+    '<div class="arrow" aria-hidden="true">' + ic('arrow') + '</div><button class="t-node fin" data-editstep="final"><b>' + ic('trophy') + ' FINAL TASK</b><h3>' + esc(s.finalTask.title || 'À définir') + '</h3>' + actsHtml(s.finalTask.activities) + '</button></div>';
+}
+function backward() {
+  var s = seq(), f = s.finalTask;
+  return hero('Backward Design', 'Partez de ce que les élèves sauront faire à la fin, puis construisez les apprentissages qui y mènent.', true) +
+    '<div class="backward"><div class="backward-goal"><span class="pill">' + ic('trophy') + '1 · Tâche finale</span><h2>' + esc(f.title || 'Définir la tâche finale') + '</h2>' +
+    field('Tâche finale', 'final.title', f.title) + field('Situation de communication', 'final.context', f.context, 'textarea') + field('Production attendue', 'final.product', f.product) +
+    '<div class="field"><span class="flabel">Activités langagières mobilisées</span>' + actPicker(f.activities, 'data-ftact') + '</div>' +
+    field('Critères de réussite', 'final.criteria', f.criteria, 'textarea') + '</div>' +
+    '<div class="backward-box"><span class="pill">' + ic('target') + '2 · Compétences</span><h2>Quels savoirs et savoir-faire mobiliser ?</h2>' +
+    (s.objectives.map(function (o) { return '<div class="entry"><div>' + catBadge(o.category) + ' ' + esc(o.text) + '</div><button class="icon-btn" data-editobj="' + o.id + '" aria-label="Modifier">' + ic('pencil') + '</button></div>'; }).join('') || '<p class="help">Aucun objectif.</p>') +
+    '<button class="btn ghost" data-addobj>' + ic('plus') + 'Ajouter un objectif</button></div>' +
+    '<div class="backward-box"><span class="pill">' + ic('dumbbell') + '3 · Préparation</span><h2>Ce qui doit être entraîné avant</h2><p class="help">Les activités langagières de la tâche finale doivent être travaillées en amont, et plus d’une fois.</p>' + coverageHtml(s) + '</div>' +
+    '<div class="backward-box"><span class="pill">' + ic('stairs') + '4 · Étapes</span><h2>Construire l’escalier</h2>' +
+    (s.steps.map(function (st, i) { return '<div class="entry"><div><b>' + (i + 1) + '. ' + esc(st.title) + '</b><p>' + esc(st.objective) + '</p>' + actsHtml(st.activities) + '</div><button class="icon-btn" data-editstep="' + st.id + '" aria-label="Modifier">' + ic('pencil') + '</button></div>'; }).join('') || '<p class="help">Aucune étape.</p>') +
+    '<div class="card-row" style="justify-content:flex-start;flex-wrap:wrap"><button class="btn ghost" data-addstep>' + ic('plus') + 'Ajouter une étape</button><button class="btn primary" data-goto="visual">Voir l’escalier</button></div></div></div>';
+}
+function dualStats(s) {
+  var spiral = 0;
+  s.objectives.forEach(function (o) { if (diag(s, o).n >= 2) spiral++; });
+  return '<div class="stat"><b>' + s.steps.length + '</b> étapes</div><div class="stat"><b>' + s.objectives.length + '</b> objectifs</div>' +
+    '<div class="stat"><b>' + linkCount(s) + '</b> liens posés</div><div class="stat"><b>' + spiral + '/' + s.objectives.length + '</b> objectifs repris sur 2 séances ou plus</div>';
+}
+function legend() {
+  return '<div class="legend">' + STATUS.map(function (x) { return '<span><span class="mcell s-' + x[0] + '">' + x[0] + '</span>' + x[1] + '</span>'; }).join('') + '</div>';
+}
+function matrixContent(readOnly) {
+  var s = seq();
+  if (!s.steps.length || !s.objectives.length) return '<p class="help">Ajoutez au moins une étape et un objectif pour remplir la matrice.</p>';
+  return '<div class="matrix-scroll"><table class="matrix"><thead><tr><th scope="col">Objectif</th>' +
+    s.steps.map(function (st, i) { return '<th scope="col">' + (i + 1) + '. ' + esc(st.title) + '</th>'; }).join('') +
+    '<th scope="col">Bilan</th></tr></thead><tbody>' +
+    s.objectives.map(function (o) {
+      var row = s.links[o.id] || {}, d = diag(s, o);
+      return '<tr><td class="obj">' + catBadge(o.category) + '<br>' + esc(o.text) + '</td>' +
+        s.steps.map(function (st) {
+          var v = row[st.id] || '';
+          var label = v ? STATUS[CYCLE.indexOf(v) - 1][1] : 'non travaillé';
+          if (readOnly) return '<td>' + (v ? '<span class="mcell s-' + v + '" title="' + label + '">' + v + '</span>' : '<span class="muted">·</span>') + '</td>';
+          return '<td><button class="cell' + (v ? ' s-' + v : '') + '" data-cell="' + o.id + '|' + st.id + '" aria-label="' + esc(o.text) + ' — ' + esc(st.title) + ' : ' + label + '">' + (v || '·') + '</button></td>';
+        }).join('') +
+        '<td id="diag-' + o.id + '"><span class="diag ' + d.c + '">' + d.t + '</span></td></tr>';
+    }).join('') + '</tbody></table></div>';
+}
+function dual() {
+  var s = seq();
+  return hero('Dual View', 'Reliez la progression aux objectifs et vérifiez que chaque point de langue revient en spirale.', true) +
+    '<div class="stats" id="dual-stats">' + dualStats(s) + '</div>' +
+    '<div class="panel" style="margin-top:20px"><h2>' + ic('grid') + ' Matrice de progression</h2><p class="help">Touchez une case pour faire défiler : Introduit → Entraîné → Réinvesti → Évalué → vide. Un objectif vu dans une seule séance est signalé pour être repris.</p>' +
+    legend() + matrixContent(false) + '</div>' +
+    '<div class="panel"><h2>' + ic('stairs') + ' Learning Path</h2>' + stairs() + '</div>';
+}
+function inspector() {
+  var s = seq(), f = s.finalTask;
+  var cats = CATS.slice();
+  s.objectives.forEach(function (o) { if (cats.indexOf(o.category) < 0) cats.push(o.category); });
+  var objBlocks = cats.map(function (cat) {
+    var a = s.objectives.filter(function (o) { return o.category === cat; });
+    return a.length ? '<div class="entry"><div>' + catBadge(cat) + '<ul>' + a.map(function (o) { return '<li>' + esc(o.text) + '</li>'; }).join('') + '</ul></div></div>' : '';
+  }).join('');
+  var rows = s.steps.map(function (st, i) {
+    var sup = esc(st.support) + (isUrl(st.link) ? (st.support ? '<br>' : '') + '<a href="' + esc(st.link) + '" target="_blank" rel="noopener">' + esc(st.link) + '</a>' : '');
+    return '<tr><td><b>' + (i + 1) + '</b></td><td><b>' + esc(st.title) + '</b>' + (st.intermediate ? '<br><span class="tag">Tâche intermédiaire</span>' : '') + '</td><td>' + esc(st.objective) + '</td><td>' + actsHtml(st.activities) + '</td><td>' + sup + '</td><td>' + esc(st.duration) + '</td></tr>';
+  }).join('');
+  rows += '<tr class="final"><td>' + ic('trophy') + '</td><td><b>' + esc(f.title || 'Tâche finale') + '</b></td><td>' + esc(f.product) + '</td><td>' + actsHtml(f.activities) + '</td><td>' + esc(f.audience) + '</td><td></td></tr>';
+  var meta = [];
+  if (s.axis) meta.push('Axe culturel : ' + esc(s.axis));
+  if (s.duration) meta.push('Durée : ' + esc(s.duration));
+  return hero('Inspector View', 'Une synthèse claire de votre séquence, prête à présenter ou imprimer.', true, 'no-print') +
+    '<div class="head-with-controls no-print"><span class="help" style="margin:0">Dans la fenêtre d’impression, choisissez « Enregistrer au format PDF ».</span><button class="btn primary" data-print>' + ic('print') + 'Imprimer / PDF</button></div>' +
+    '<article class="preview" id="inspector-preview"><div class="colorbar"></div>' +
+    '<div class="card-row"><span class="pill">ENGLISH · ' + esc(s.level || '—') + ' · ' + esc(s.cefr || '—') + '</span><span class="muted" style="font-size:12px">SEQUENCE STUDIO by BROT2YOU</span></div>' +
+    '<h1>' + esc(s.title) + '</h1>' + (s.problem ? '<h3 style="margin:0 0 6px;font-weight:600">' + esc(s.problem) + '</h3>' : '') +
+    '<p class="muted">' + meta.join(' — ') + '</p>' +
+    (s.prerequisites ? '<p><b>Prérequis :</b> ' + esc(s.prerequisites) + '</p>' : '') +
+    '<div class="hline"></div><h2>' + ic('target') + ' Objectifs</h2><div class="obj-grid">' + (objBlocks || '<p class="help">Aucun objectif renseigné.</p>') + '</div>' +
+    '<h2>' + ic('stairs') + ' Déroulé de la séquence</h2><div class="matrix-scroll"><table class="step-table"><thead><tr><th>#</th><th>Étape</th><th>Objectif / production</th><th>Activités</th><th>Supports</th><th>Durée</th></tr></thead><tbody>' + rows + '</tbody></table></div>' +
+    '<h2>' + ic('trophy') + ' Tâche finale</h2><div class="final"><h3>' + esc(f.title || 'À définir') + '</h3>' + (f.context ? '<p>' + esc(f.context) + '</p>' : '') +
+    '<p><b>Destinataire :</b> ' + esc(f.audience) + '<br><b>Production :</b> ' + esc(f.product) + '<br><b>Critères de réussite :</b> ' + esc(f.criteria) + '</p>' + actsHtml(f.activities) + '</div>' +
+    '<h2>' + ic('grid') + ' Progression des objectifs</h2>' + legend() + matrixContent(true) +
+    '<p class="footer-note">Synthèse pédagogique générée avec SEQUENCE STUDIO — by BROT2YOU</p></article>';
+}
+function objectives() {
+  var s = seq(), cats = CATS.slice();
+  s.objectives.forEach(function (o) { if (cats.indexOf(o.category) < 0) cats.push(o.category); });
+  return hero('Objectifs & CECRL', 'Des objectifs transparents, reliés à la progression et à la tâche finale.', true) +
+    '<div class="panel"><h2>Activités langagières dans la séquence</h2><p class="help">Calculé à partir des activités cochées sur chaque étape et sur la tâche finale (' + ic('trophy') + ').</p>' + coverageHtml(s) + '</div>' +
+    '<div class="two-col">' + cats.map(function (cat) {
+      var list = s.objectives.filter(function (o) { return o.category === cat; });
+      return '<div class="panel"><div class="head-with-controls" style="margin-bottom:6px"><h2 style="margin:0">' + esc(cat) + '</h2><button class="btn ghost small" data-addobj="' + esc(cat) + '">' + ic('plus') + 'Ajouter</button></div>' +
+        (list.map(function (o) { return '<div class="entry"><div>' + esc(o.text) + '</div><button class="icon-btn" data-editobj="' + o.id + '" aria-label="Modifier">' + ic('pencil') + '</button></div>'; }).join('') || '<p class="help">Aucun objectif renseigné.</p>') + '</div>';
+    }).join('') + '</div>' +
+    '<p class="note">Les intitulés d’axes et de descripteurs ne sont pas pré-remplis : saisissez-les tels qu’ils figurent dans vos programmes de référence.</p>';
+}
+function exportScreen() {
+  var s = seq();
+  return hero('Export Studio', 'Sauvegardez, partagez et présentez votre travail.', true) +
+    '<div class="two-col"><div class="panel"><h2>' + ic('package') + ' Sauvegarde complète</h2><p class="help">Toutes vos séquences (archives comprises) dans un fichier JSON, à réimporter sur cet appareil ou un autre.</p><button class="btn primary" data-json-all>' + ic('download') + 'Télécharger la sauvegarde</button></div>' +
+    '<div class="panel"><h2>' + ic('share') + ' Partager une séquence</h2><p class="help">' + (s ? 'Exporte uniquement « ' + esc(s.title) + ' ». Votre collègue l’importe et choisit « Ajouter à ma bibliothèque ».' : 'Ouvrez une séquence pour l’exporter seule.') + '</p><button class="btn primary" data-json-one' + (s ? '' : ' disabled') + '>' + ic('download') + 'Exporter cette séquence</button></div>' +
+    '<div class="panel"><h2>' + ic('doc') + ' Dossier imprimable</h2><p class="help">L’Inspector View rassemble objectifs, déroulé, tâche finale et matrice de progression, mis en page pour l’impression.</p><button class="btn primary" data-goto="inspector"' + (s ? '' : ' disabled') + '>Ouvrir Inspector View</button></div>' +
+    '<div class="panel"><h2>' + ic('upload') + ' Importer</h2><p class="help">Accepte une sauvegarde complète ou une séquence partagée. Vous choisirez ensuite d’ajouter ou de remplacer.</p><button class="btn ghost" data-import>' + ic('upload') + 'Choisir un fichier JSON</button></div></div>' +
+    '<p class="footer-note">' + ic('lock') + 'Aucune donnée ne quitte votre appareil : pas de compte, pas de serveur. Vider les données du navigateur efface les séquences non exportées.</p>';
+}
+
+/* ---------- render & bind ---------- */
+function go(v) { view = v; render(); var w = $('#workspace'); if (w) w.scrollTop = 0; }
+function render() {
+  if (!seq() && view !== 'dashboard' && view !== 'export') view = 'dashboard';
+  $('#navigation').innerHTML = NAV.map(function (n) {
+    var dis = !seq() && n[0] !== 'dashboard' && n[0] !== 'export';
+    return '<button style="--c:' + n[3] + ';--t:' + n[4] + '" class="' + (view === n[0] ? 'active' : '') + '" data-nav="' + n[0] + '" title="' + n[2] + '"' + (dis ? ' disabled' : '') + (view === n[0] ? ' aria-current="page"' : '') + '><span class="ico" aria-hidden="true">' + ic(n[1]) + '</span><span class="label">' + n[2] + '</span></button>';
+  }).join('');
+  updateCrumb();
+  var screens = { dashboard: dashboard, designer: designer, visual: visualScreen, backward: backward, dual: dual, inspector: inspector, objectives: objectives, 'export': exportScreen };
+  $('#screen').innerHTML = screens[view]();
+  bind();
+  updateUndo();
+}
+function updateCrumb() {
+  var label = 'My Sequences';
+  NAV.forEach(function (n) { if (n[0] === view) label = n[2]; });
+  var s = seq();
+  $('#breadcrumb').innerHTML = esc(label) + '<small>' + esc(view === 'dashboard' ? 'Creative teaching starts here' : (s ? s.title : '')) + '</small>';
+}
+function fieldInput(el) {
+  var s = seq(); if (!s) return;
+  if (!editSnap) { snapshot(); editSnap = true; }
+  var key = attr(el, 'data-field'), v = el.value;
+  if (key.indexOf('final.') === 0) s.finalTask[key.slice(6)] = v; else s[key] = v;
+  s.updated = Date.now();
+  persistSoon();
+  if (key === 'title') updateCrumb();
+}
+function bindCards() {
+  on('[data-open]', 'click', function (el, e) { e.stopPropagation(); activeId = attr(el, 'data-open'); go('designer'); });
+  on('[data-new]', 'click', newSequence);
+  on('[data-fav]', 'click', function (el, e) {
+    e.stopPropagation();
+    var id = attr(el, 'data-fav');
+    mutate(function () { var s = findBy(data.sequences, 'id', id); s.favorite = !s.favorite; }, true);
+  });
+  on('[data-dup]', 'click', function (el, e) {
+    e.stopPropagation();
+    var id = attr(el, 'data-dup');
+    mutate(function () {
+      var o = findBy(data.sequences, 'id', id), n = reId(clone(o));
+      n.title += ' (copie)'; n.updated = Date.now(); n.favorite = false;
+      data.sequences.splice(indexBy(data.sequences, 'id', id) + 1, 0, n);
+    }, true);
+    toast('Séquence dupliquée');
+  });
+  on('[data-archive]', 'click', function (el, e) {
+    e.stopPropagation();
+    var id = attr(el, 'data-archive');
+    mutate(function () {
+      findBy(data.sequences, 'id', id).archived = true;
+      if (activeId === id) { var f = firstActive(); activeId = f ? f.id : null; }
+    }, true);
+    toast('Séquence archivée — retrouvez-la dans Archives');
+  });
+  on('[data-restore]', 'click', function (el, e) {
+    e.stopPropagation();
+    var id = attr(el, 'data-restore');
+    mutate(function () { findBy(data.sequences, 'id', id).archived = false; if (!activeId) activeId = id; }, true);
+    toast('Séquence restaurée');
+  });
+  on('[data-delete]', 'click', function (el, e) {
+    e.stopPropagation();
+    var id = attr(el, 'data-delete'), s = findBy(data.sequences, 'id', id);
+    confirmBox('Supprimer définitivement ?', '« ' + s.title + ' » sera supprimée de ce navigateur. Exportez-la d’abord si vous voulez la garder.', 'Supprimer définitivement', function () {
+      mutate(function () {
+        data.sequences = data.sequences.filter(function (x) { return x.id !== id; });
+        if (activeId === id) { var f = firstActive(); activeId = f ? f.id : null; }
+      }, true);
+      toast('Séquence supprimée');
+    }, true);
+  });
+}
+function bind() {
+  on('[data-nav]', 'click', function (el) { go(attr(el, 'data-nav')); });
+  on('[data-field]', 'input', fieldInput);
+  on('[data-field]', 'change', fieldInput);
+  on('[data-field]', 'blur', function () { editSnap = false; if (saveTimer) persist(); });
+  bindCards();
+  on('[data-dtab]', 'click', function (el) { dashTab = attr(el, 'data-dtab'); render(); });
+  var search = $('#search');
+  if (search) search.oninput = function () { query = search.value; $('#cards').innerHTML = cards(); bindCards(); };
+  on('[data-visual]', 'click', function (el) { visual = attr(el, 'data-visual'); render(); });
+  on('[data-editstep]', 'click', function (el) { editStep(attr(el, 'data-editstep')); });
+  on('[data-addstep]', 'click', function () { editStep(null); });
+  on('[data-upstep],[data-downstep]', 'click', function (el) {
+    var id = attr(el, 'data-upstep') || attr(el, 'data-downstep'), delta = attr(el, 'data-upstep') ? -1 : 1;
+    mutate(function () {
+      var arr = seq().steps, i = indexBy(arr, 'id', id), j = i + delta;
+      if (i >= 0 && j >= 0 && j < arr.length) { var t = arr[i]; arr[i] = arr[j]; arr[j] = t; }
+    });
+  });
+  on('[data-addobj]', 'click', function (el) { editObj(null, attr(el, 'data-addobj') || ''); });
+  on('[data-editobj]', 'click', function (el) { editObj(attr(el, 'data-editobj')); });
+  on('[data-ftact]', 'click', function (el) {
+    var c = attr(el, 'data-ftact');
+    mutate(function () {
+      var a = seq().finalTask.activities, i = a.indexOf(c);
+      if (i >= 0) a.splice(i, 1); else a.push(c);
+    });
+  });
+  on('[data-goto]', 'click', function (el) { go(attr(el, 'data-goto')); });
+  on('[data-cell]', 'click', cycleCell);
+  $$('[data-mgroup]').forEach(function (g) {
+    var act = function () {
+      var c = attr(g, 'data-mgroup');
+      if (c === 'Séances' || c === 'Tâche finale') go('designer'); else go('objectives');
+    };
+    g.addEventListener('click', act);
+    g.addEventListener('keydown', function (e) { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); act(); } });
+  });
+  on('[data-print]', 'click', function () { window.print(); });
+  on('[data-png]', 'click', exportPNG);
+  on('[data-json-all]', 'click', saveAll);
+  on('[data-json-one]', 'click', saveOne);
+  on('[data-import]', 'click', function () { $('#importFile').click(); });
+}
+function cycleCell(el) {
+  var parts = attr(el, 'data-cell').split('|'), o = parts[0], st = parts[1], s = seq();
+  snapshot();
+  if (!s.links[o]) s.links[o] = {};
+  var cur = s.links[o][st] || '', nx = CYCLE[(CYCLE.indexOf(cur) + 1) % CYCLE.length];
+  if (nx) s.links[o][st] = nx; else delete s.links[o][st];
+  s.updated = Date.now();
+  persist();
+  el.className = 'cell' + (nx ? ' s-' + nx : '');
+  el.textContent = nx || '·';
+  var lab = nx ? STATUS[CYCLE.indexOf(nx) - 1][1] : 'non travaillé';
+  el.setAttribute('aria-label', el.getAttribute('aria-label').replace(/ : [^:]+$/, ' : ' + lab));
+  var obj = findBy(s.objectives, 'id', o), d = diag(s, obj), cell = document.getElementById('diag-' + o);
+  if (cell) cell.innerHTML = '<span class="diag ' + d.c + '">' + d.t + '</span>';
+  var stats = $('#dual-stats');
+  if (stats) stats.innerHTML = dualStats(s);
+}
+
+/* ---------- import / export ---------- */
+function download(name, content, mime) {
+  var blob = new Blob([content], { type: mime }), url = URL.createObjectURL(blob), a = document.createElement('a');
+  a.href = url; a.download = name; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(function () { URL.revokeObjectURL(url); }, 2000);
+}
+function stamp() { var d = new Date(); return d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2); }
+function saveAll() {
+  if (saveTimer) persist();
+  download('sequence-studio-sauvegarde-' + stamp() + '.json', JSON.stringify({ app: 'SEQUENCE STUDIO', version: 2, sequences: data.sequences }, null, 2), 'application/json');
+  toast('Sauvegarde téléchargée');
+}
+function saveOne() {
+  var s = seq(); if (!s) return;
+  if (saveTimer) persist();
+  download('sequence-' + slug(s.title) + '.json', JSON.stringify({ app: 'SEQUENCE STUDIO', version: 2, sequences: [s] }, null, 2), 'application/json');
+  toast('Séquence exportée');
+}
+function doImport(file) {
+  if (!file) return;
+  var r = new FileReader();
+  r.onload = function () {
+    var list = null;
+    try {
+      var o = JSON.parse(r.result);
+      if (isObj(o) && Array.isArray(o.sequences)) list = o.sequences;
+      else if (isObj(o) && Array.isArray(o.steps)) list = [o];
+      else if (Array.isArray(o)) list = o;
+    } catch (e) { list = null; }
+    if (!list || !list.length) { toast('Import impossible : ce fichier ne contient pas de séquence SEQUENCE STUDIO.'); return; }
+    if (list.length > 500) { toast('Import impossible : plus de 500 séquences dans le fichier.'); return; }
+    var seqs = list.filter(isObj).map(normalize);
+    var names = seqs.slice(0, 6).map(function (s) { return '<li>' + esc(s.title) + '</li>'; }).join('') + (seqs.length > 6 ? '<li>… et ' + (seqs.length - 6) + ' autre(s)</li>' : '');
+    openModal({
+      title: 'Importer ' + plural(seqs.length, 'séquence', 'séquences'),
+      body: '<ul style="line-height:1.7;margin-top:0">' + names + '</ul><p class="help">« Ajouter » conserve vos séquences actuelles. « Remplacer » efface votre bibliothèque actuelle (annulable avec le bouton Annuler tant que la page reste ouverte).</p>',
+      buttons: [
+        { label: 'Remplacer tout', cls: 'danger', onClick: function () { applyImport(seqs, true); } },
+        { spacer: true }, { label: 'Annuler', cls: 'ghost' },
+        { label: 'Ajouter à ma bibliothèque', cls: 'primary', onClick: function () { applyImport(seqs, false); } }
+      ]
+    });
+  };
+  r.onerror = function () { toast('Lecture du fichier impossible.'); };
+  r.readAsText(file);
+  $('#importFile').value = '';
+}
+function applyImport(seqs, replace) {
+  mutate(function () {
+    if (replace) data.sequences = seqs;
+    else seqs.slice().reverse().forEach(function (s) { if (findBy(data.sequences, 'id', s.id)) reId(s); data.sequences.unshift(s); });
+    var f = null;
+    for (var i = 0; i < seqs.length; i++) { if (!seqs[i].archived) { f = seqs[i]; break; } }
+    activeId = f ? f.id : (firstActive() ? firstActive().id : null);
+    view = 'dashboard'; dashTab = 'active'; query = '';
+  }, true);
+  toast(replace ? 'Bibliothèque remplacée' : plural(seqs.length, 'séquence ajoutée', 'séquences ajoutées'));
+}
+function stairsSvg() {
+  var s = seq(), items = s.steps.slice(), n;
+  items.push({ title: s.finalTask.title || 'Final task', objective: s.finalTask.product, activities: s.finalTask.activities, fin: true });
+  n = items.length;
+  var colW = 215, W = Math.max(1000, 60 + n * colW), H = 660, base = 625;
+  var inc = n > 1 ? Math.min(60, 360 / (n - 1)) : 0;
+  var fills = ['#9ec5ff', '#ffb3d9', '#9ff0cf', '#ffc59e', '#d4c2ff'];
+  var out = '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '" viewBox="0 0 ' + W + ' ' + H + '" font-family="Arial, Helvetica, sans-serif">' +
+    '<rect width="100%" height="100%" fill="#f4f0ff"/>' +
+    '<text x="34" y="56" font-size="32" font-weight="bold" fill="#1b1f3b">' + esc(wrap(s.title, 60, 1)[0] || '') + '</text>' +
+    '<text x="34" y="86" font-size="16" fill="#68748b">' + esc(wrap(s.problem, 110, 1)[0] || '') + '</text>';
+  items.forEach(function (st, i) {
+    var x = 30 + i * colW, h = 170 + i * inc, y = base - h, fill = st.fin ? '#ffd23f' : fills[i % 5];
+    out += '<rect x="' + (x + 5) + '" y="' + (y + 5) + '" width="200" height="' + h + '" rx="16" fill="#1b1f3b"/>';
+    out += '<rect x="' + x + '" y="' + y + '" width="200" height="' + h + '" rx="16" fill="' + fill + '" stroke="#1b1f3b" stroke-width="3"/>';
+    out += '<text x="' + (x + 14) + '" y="' + (y + 26) + '" font-size="12" font-weight="bold" fill="#1b1f3b">' + (st.fin ? 'FINAL TASK' : 'STEP ' + (i + 1)) + '</text>';
+    var tl = wrap(st.title, 20, 2), ol = wrap(st.objective, 30, 3), ty = y + 50;
+    tl.forEach(function (t) { out += '<text x="' + (x + 14) + '" y="' + ty + '" font-size="16" font-weight="bold" fill="#1b1f3b">' + esc(t) + '</text>'; ty += 20; });
+    ty += 4;
+    ol.forEach(function (t) { out += '<text x="' + (x + 14) + '" y="' + ty + '" font-size="11.5" fill="#3d4864">' + esc(t) + '</text>'; ty += 15; });
+    if (st.activities && st.activities.length) out += '<text x="' + (x + 14) + '" y="' + (base - 16) + '" font-size="11" font-weight="bold" fill="#1b1f3b">' + esc(st.activities.map(actName).join(' · ')) + '</text>';
+  });
+  out += '<text x="' + (W - 30) + '" y="' + (H - 10) + '" font-size="11" text-anchor="end" fill="#9aa3b8">SEQUENCE STUDIO by BROT2YOU</text></svg>';
+  return { svg: out, w: W, h: H };
+}
+function exportPNG() {
+  var s = seq(); if (!s) return;
+  if (visual === 'map') drawSvgPNG(mindmapSvg(), 1140, 690, 'mind-map');
+  else { var r = stairsSvg(); drawSvgPNG(r.svg, r.w, r.h, 'escalier'); }
+}
+function drawSvgPNG(src, w, h, kind) {
+  var img = new Image();
+  var url = 'data:image/svg+xml;charset=utf-8,' + encodeURIComponent(src);
+  var name = 'sequence-studio-' + slug(seq().title) + '-' + kind + '.png';
+  img.onload = function () {
+    var c = document.createElement('canvas'); c.width = w * 2; c.height = h * 2;
+    var ctx = c.getContext('2d'); ctx.scale(2, 2); ctx.drawImage(img, 0, 0, w, h);
+    try {
+      if (c.toBlob) {
+        c.toBlob(function (b) { if (b) { download(name, b, 'image/png'); toast('Image PNG téléchargée'); } else toast('Génération de l’image impossible'); }, 'image/png');
+      } else {
+        var a = document.createElement('a'); a.href = c.toDataURL('image/png'); a.download = name; document.body.appendChild(a); a.click(); document.body.removeChild(a);
+        toast('Image PNG téléchargée');
+      }
+    } catch (e) { toast('Génération de l’image impossible dans ce navigateur'); }
+  };
+  img.onerror = function () { toast('Génération de l’image impossible'); };
+  img.src = url;
+}
+
+/* ---------- boot ---------- */
+$('#newBtn').onclick = newSequence;
+$('#importBtn').onclick = function () { $('#importFile').click(); };
+$('#importFile').onchange = function (e) { doImport(e.target.files && e.target.files[0]); };
+$('#exportBtn').onclick = function () { go('export'); };
+$('#undoBtn').onclick = doUndo;
+$('#redoBtn').onclick = doRedo;
+$('#modal').onclick = function (e) { if (e.target === this) closeModal(); };
+document.addEventListener('keydown', function (e) {
+  var modalOpen = !$('#modal').classList.contains('hidden');
+  if (e.key === 'Escape' && modalOpen) { closeModal(); return; }
+  if (modalOpen) {
+    if (e.key === 'Enter' && e.target.tagName === 'INPUT' && e.target.type !== 'checkbox') {
+      var p = $('#modal .btn.primary'); if (p) { e.preventDefault(); p.click(); }
+    }
+    return;
+  }
+  var tag = document.activeElement ? document.activeElement.tagName : '';
+  if (tag === 'INPUT' || tag === 'TEXTAREA' || tag === 'SELECT') return;
+  if ((e.ctrlKey || e.metaKey) && (e.key === 'z' || e.key === 'Z') && !e.shiftKey) { e.preventDefault(); doUndo(); }
+  else if ((e.ctrlKey || e.metaKey) && (e.key === 'y' || ((e.key === 'z' || e.key === 'Z') && e.shiftKey))) { e.preventDefault(); doRedo(); }
+});
+window.addEventListener('pagehide', function () { if (saveTimer) persist(); });
+document.addEventListener('visibilitychange', function () { if (document.hidden && saveTimer) persist(); });
+$$('i[data-ic]').forEach(function (el) { el.outerHTML = ic(attr(el, 'data-ic')); });
+load();
+render();
+</script>
+</body>
+</html>
